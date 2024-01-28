@@ -8,4 +8,4 @@
 
 
 # 최신글 
-- https://linebender.org/blog/xilem-backend-roadmap/
+- 240119 https://linebender.org/blog/xilem-backend-roadmap/
