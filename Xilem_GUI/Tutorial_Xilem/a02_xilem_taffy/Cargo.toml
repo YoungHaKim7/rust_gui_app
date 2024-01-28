@@ -1,0 +1,16 @@
+[package]
+name = "a02_xilem_taffy"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+xilem = {git = "https://github.com/linebender/xilem"}
+taffy = { git = "https://github.com/DioxusLabs/taffy", rev = "7781c70241f7f572130c13106f2a869a9cf80885", optional = true }
+vello = { git = "https://github.com/linebender/vello", rev = "944ce63d8ff40d01f3dbbb7be096feaf6c3657fa" }
+
+[features]
+default = ["taffy"]
+
+taffy = ["dep:taffy"]
