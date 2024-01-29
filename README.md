@@ -46,11 +46,11 @@ https://google.github.io/comprehensive-rust/exercises/day-3/solutions-morning.ht
   - 240119 https://linebender.org/blog/xilem-backend-roadmap/
 
 - Project status
-The Druid project is being discontinued by the core developer team.
+  - The Druid project is being discontinued by the core developer team.
 
-New development effort is focused on Xilem, which has a lot of fundamental changes to allow for a wider variety of applications with better performance, but it also heavily inherits from Druid. We see Xilem as the future of Druid.
+  - New development effort is focused on Xilem, which has a lot of fundamental changes to allow for a wider variety of applications with better performance, but it also heavily inherits from Druid. We see Xilem as the future of Druid.
 
-Druid is reasonably usable for some subset of applications and has a significant testing history, which ensures some stability and correctness. However we don't expect any major new features to be added to Druid. As such we don't recommend using Druid for brand new applications. If you insist, then at least make sure your application doesn't require a feature that Druid doesn't have, e.g. accessibility or 3D support.
+  - Druid is reasonably usable for some subset of applications and has a significant testing history, which ensures some stability and correctness. However we don't expect any major new features to be added to Druid. As such we don't recommend using Druid for brand new applications. If you insist, then at least make sure your application doesn't require a feature that Druid doesn't have, e.g. accessibility or 3D support.
 
 <hr>
 
