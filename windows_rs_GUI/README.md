@@ -25,4 +25,3 @@
         - riddle - Windows metadata compiler tool.
 
 
-- relm[![crates.io](https://img.shields.io/crates/v/relm.svg)
