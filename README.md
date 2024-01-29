@@ -42,6 +42,9 @@ https://google.github.io/comprehensive-rust/exercises/day-3/solutions-morning.ht
 
     - https://github.com/linebender/xilem
 
+- Xilem최신글
+  - 240119 https://linebender.org/blog/xilem-backend-roadmap/
+
 <hr>
 
 - (egui)[![crates.io](https://img.shields.io/crates/v/egui.svg)](https://crates.io/crates/egui)![Crates.io](https://img.shields.io/crates/l/egui)
