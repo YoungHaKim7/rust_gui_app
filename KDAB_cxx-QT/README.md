@@ -11,6 +11,8 @@ export QT_DEBUG_PLUGINS=1
 
 - qt-creator
   - https://github.com/qt-creator/qt-creator
+    - 설명서
+      - https://doc.qt.io/qtcreator/index.html
 
 ```
 sudo apt-get install libxcb-randr0-dev libxcb-xtest0-dev libxcb-xinerama0-dev libxcb-shape0-dev libxcb-xkb-dev
