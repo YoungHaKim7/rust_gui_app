@@ -12,6 +12,10 @@ Qt will be installed into '/usr/local/Qt-5.15.12'.
 
 ```
 
+- gmake설치 오래 걸림 ㅜㅜ
+- 설치 설명서
+  - https://saelly.tistory.com/m/567
+
 <hr>
 
 # cxx-qt
