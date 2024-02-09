@@ -1,3 +1,15 @@
+# ```export QT_QPA_PLATFORM=eglfs ```
+```
+./analogclock 
+qt.qpa.plugin: Could not find the Qt platform plugin "xcb" in ""
+This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem.
+
+Available platform plugins are: eglfs, linuxfb, minimal, minimalegl, offscreen, vnc, wayland-egl, wayland, webgl.
+
+[1]    3168 IOT instruction (core dumped)  ./analogclock
+
+```
+
 # PATH
 
 - bashrc
