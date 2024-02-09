@@ -12,6 +12,11 @@ Qt will be installed into '/usr/local/Qt-5.15.12'.
 
 ```
 
+- 폴더 다른게 세팅해줌
+```
+./configure --prefix=/home/gy/utilities/qt5 -shared
+```
+
 - gmake설치 오래 걸림 ㅜㅜ
 - 설치 설명서
   - https://saelly.tistory.com/m/567
