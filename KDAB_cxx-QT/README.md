@@ -1,4 +1,18 @@
+# PATH
 
+- bashrc
+```
+##### QT #####
+export SW_ROOT=$HOME/utilities
+export QT5_ROOT=$SW_ROOT/qt5
+
+export USER_LIB=$QT5_ROOT/lib
+export SYS_LIB=$/lib:/lib64:/usr/lib:/usr/lib64
+
+export LD_LIBRARY_PATH=$USER_LIB:$SYS_LIB
+export QT_PLUGIN_PATH=$QT5_ROOT/plugins
+############
+```
 
 # QT5 DEBUG message
 
