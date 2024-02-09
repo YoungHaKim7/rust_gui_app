@@ -21,6 +21,13 @@ export QT_DEBUG_PLUGINS=1
 ```
 - https://forum.qt.io/topic/116299/qt-creator-ubuntu-20-04/4
 
+# QT6 Install
+
+- 병렬로 빨리 설치하기(속이 시원하다)
+```
+cmake --build . --parallel
+```
+
 # QT5 Install
 - https://download.qt.io/
 - https://softengn.tistory.com/4
