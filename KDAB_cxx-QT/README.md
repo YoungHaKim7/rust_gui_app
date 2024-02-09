@@ -150,6 +150,8 @@ http://wiki.qt.io/Qt5DocumentationProject
 
 ```
 
+- 한글 번역
+```
 Qt 문서를 생성하려면:
 
 qtdoc에는 다음과 같은 주요 Qt Reference Documentation이 포함되어 있습니다
