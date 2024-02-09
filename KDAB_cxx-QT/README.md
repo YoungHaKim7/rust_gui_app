@@ -1,6 +1,6 @@
 # QT5 Install
 
-- https://wiki.qt.io/Install_Qt_5_on_Ubuntu
+- https://www.linuxfromscratch.org/blfs/view/svn/x/qt5.html
 
 <hr>
 
