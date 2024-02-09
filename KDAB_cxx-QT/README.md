@@ -16,6 +16,21 @@ Qt will be installed into '/usr/local/Qt-5.15.12'.
 - 설치 설명서
   - https://saelly.tistory.com/m/567
 
+```
+gmake[4]: Leaving directory '/home/gy/utilities/qt_5_15_12/qtdoc/examples/demos/rssnews'
+gmake[3]: Leaving directory '/home/gy/utilities/qt_5_15_12/qtdoc/examples/demos'
+gmake[2]: Leaving directory '/home/gy/utilities/qt_5_15_12/qtdoc/examples'
+cd doc/src/cmake/ && ( test -e Makefile || /home/gy/utilities/qt_5_15_12/qtbase/bin/qmake -o Makefile /home/gy/utilities/qt_5_15_12/qtdoc/doc/src/cmake/cmake.pro ) && gmake -f Makefile 
+gmake[2]: Entering directory '/home/gy/utilities/qt_5_15_12/qtdoc/doc/src/cmake'
+gmake[2]: Nothing to be done for 'first'.
+gmake[2]: Leaving directory '/home/gy/utilities/qt_5_15_12/qtdoc/doc/src/cmake'
+cd doc/ && ( test -e Makefile || /home/gy/utilities/qt_5_15_12/qtbase/bin/qmake -o Makefile /home/gy/utilities/qt_5_15_12/qtdoc/doc/doc.pro ) && gmake -f Makefile 
+gmake[2]: Entering directory '/home/gy/utilities/qt_5_15_12/qtdoc/doc'
+gmake[2]: Nothing to be done for 'first'.
+gmake[2]: Leaving directory '/home/gy/utilities/qt_5_15_12/qtdoc/doc'
+gmake[1]: Leaving directory '/home/gy/utilities/qt_5_15_12/qtdoc'
+```
+
 <hr>
 
 # cxx-qt
