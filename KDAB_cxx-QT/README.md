@@ -1,3 +1,9 @@
+# QT5 Install
+
+- https://wiki.qt.io/Install_Qt_5_on_Ubuntu
+
+<hr>
+
 # cxx-qt
 - Safe interop between Rust and Qt
 
