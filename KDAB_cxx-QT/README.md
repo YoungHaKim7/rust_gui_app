@@ -2,6 +2,16 @@
 
 - https://www.linuxfromscratch.org/blfs/view/svn/x/qt5.html
 
+
+```
+./Configure
+
+Qt is now configured for building. Just run 'gmake'.
+Once everything is built, you must run 'gmake install'.
+Qt will be installed into '/usr/local/Qt-5.15.12'.
+
+```
+
 <hr>
 
 # cxx-qt
