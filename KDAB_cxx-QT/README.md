@@ -1,3 +1,10 @@
+# QT5 DEBUG message
+
+```
+export QT_DEBUG_PLUGINS=1
+```
+- https://forum.qt.io/topic/116299/qt-creator-ubuntu-20-04/4
+
 # QT5 Install
 
 ```
