@@ -1,11 +1,13 @@
 - https://github.com/rust-qt
   - https://wiki.qt.io/Language_Bindings
 
-- Document(QT5)
-  - https://doc.qt.io/
-
 - qt6 Install
   - https://www.qt.io/download-qt-installer
+
+- Document(QT5)
+  - https://doc.qt.io/
+  - Qt Graphs
+    - https://doc.qt.io/qt-6/qtgraphs-index.html?utm_source=installer&utm_medium=banner&utm_campaign=installer4Qt66
 
 <hr>
 
