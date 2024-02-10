@@ -1,7 +1,7 @@
 - https://github.com/rust-qt
   - https://wiki.qt.io/Language_Bindings
 
-- qt6 Install
+- QT6 Install
   - https://www.qt.io/download-qt-installer
 
 - Document(QT5)
