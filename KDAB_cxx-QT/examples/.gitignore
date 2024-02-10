@@ -1,0 +1,6 @@
+/target
+**/*.rs.bk
+*.bak
+*.qmlc
+*.pro.user
+Cargo.lock
