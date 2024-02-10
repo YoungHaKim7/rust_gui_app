@@ -1,3 +1,7 @@
+- https://github.com/rust-qt
+
+<hr>
+
 # ```export QT_QPA_PLATFORM=eglfs ```
 ```
 ./analogclock 
