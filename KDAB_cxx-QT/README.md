@@ -4,6 +4,9 @@
 - Document(QT5)
   - https://doc.qt.io/
 
+- qt6 Install
+  - https://www.qt.io/download-qt-installer
+
 <hr>
 
 # ```export QT_QPA_PLATFORM=eglfs ```
