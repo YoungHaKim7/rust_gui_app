@@ -46,6 +46,7 @@ cmake --build . --parallel
 ```
 
 # QT5 Install
+- https://wiki.qt.io/Building_Qt_5_from_Git#Getting_the_source_code
 - https://download.qt.io/
 - https://softengn.tistory.com/4
 
