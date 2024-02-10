@@ -1,4 +1,5 @@
 - https://github.com/rust-qt
+  - https://wiki.qt.io/Language_Bindings
 
 <hr>
 
