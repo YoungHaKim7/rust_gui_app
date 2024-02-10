@@ -9,6 +9,10 @@
   - Qt Graphs
     - https://doc.qt.io/qt-6/qtgraphs-index.html?utm_source=installer&utm_medium=banner&utm_campaign=installer4Qt66
 
+- QTCreator(Fakevim)
+  - https://doc.qt.io/qtcreator/creator-editor-fakevim.html
+
+
 <hr>
 
 # ```export QT_QPA_PLATFORM=eglfs ```
