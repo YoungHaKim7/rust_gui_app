@@ -1,6 +1,9 @@
 - https://github.com/rust-qt
   - https://wiki.qt.io/Language_Bindings
 
+- Document(QT5)
+  - https://doc.qt.io/
+
 <hr>
 
 # ```export QT_QPA_PLATFORM=eglfs ```
