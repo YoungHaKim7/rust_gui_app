@@ -9,6 +9,9 @@
   - Qt Graphs
     - https://doc.qt.io/qt-6/qtgraphs-index.html?utm_source=installer&utm_medium=banner&utm_campaign=installer4Qt66
 
+- QT6 tutorial
+  - https://doc-snapshots.qt.io/qt6-dev/qt-intro.html
+
 - QTCreator(Fakevim)
   - https://doc.qt.io/qtcreator/creator-editor-fakevim.html
 
