@@ -9,6 +9,7 @@
 
   - Getting Started - CXX-Qt Documentation
     - 이번에 투자 받았다고 하는곳 c++ 코드 => 러스트 코드로 변환 작업 중 :rust~1:
+    - news 출처 : https://thenewstack.io/google-spends-1-million-to-make-rust-c-interoperable/
 
 # macos QT
 
