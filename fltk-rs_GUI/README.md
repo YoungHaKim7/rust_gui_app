@@ -1,3 +1,8 @@
+# 핵심 코어는 C++로 구현됨
+- https://github.com/fltk/fltk
+
+<hr>
+
 # fltk-rs
 
 [![Documentation](https://docs.rs/fltk/badge.svg)](https://docs.rs/fltk)
