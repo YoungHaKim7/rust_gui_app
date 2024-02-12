@@ -50,3 +50,5 @@ Here is a [list](https://en.wikipedia.org/wiki/FLTK#Use) of software using FLTK.
     - https://crates.io/crates/fltk
       - Tutorial Video(FLTK Rust)
         - https://youtube.com/playlist?list=PLHqrrowPLkDu9U-uk60sGM-YWLOJFfLoE
+
+- UI편하게 만들기 https://youtu.be/k_P0wG3-dNk?si=ipMcVhnf0RVAj9ou
