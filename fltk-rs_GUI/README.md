@@ -1,5 +1,7 @@
 # 핵심 코어는 C++로 구현됨
-- https://github.com/fltk/fltk
+- 핵심 구현된 C++코드 https://github.com/fltk/fltk
+
+- 다른 사람의 작품들 https://github.com/fltk-rs/fltk-rs/issues/418
 
 <hr>
 
