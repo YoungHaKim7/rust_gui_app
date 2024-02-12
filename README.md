@@ -153,8 +153,4 @@ https://google.github.io/comprehensive-rust/exercises/day-3/solutions-morning.ht
 <hr>
 
 <br>
-# Result
 
-```
-
-```
