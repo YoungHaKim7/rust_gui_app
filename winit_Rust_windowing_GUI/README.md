@@ -16,3 +16,10 @@
 
 - learn wgpu
   - https://sotrh.github.io/learn-wgpu/
+
+# winit 관련 영상 모음
+- Learning WGPU/WGSL+Winit w/ Rust | Clayton Does Other Things
+  - https://www.youtube.com/live/vR6TgeOyPgI?si=iFPw40UD9HR84Pxv
+
+-  Lightning talk - Why maintaining winit is hard - Holden Marcsisin | Rust Belt Rust Conference
+  - https://youtu.be/IiOffohZB3M?si=TZ1hR6nSx-VnyiqY
