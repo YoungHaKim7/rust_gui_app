@@ -1,0 +1,22 @@
+[package]
+name = "egui_example"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+egui_wgpu_backend = "0.19"
+chrono = "0.4"
+pollster = "0.2"
+egui = "0.19"
+epi = "0.17"
+egui_winit_platform = "0.16"
+wgpu = "0.13"
+winit = { version="0.27.3", features = ["x11"]}
+egui_demo_lib = "0.19"
+
+#[patch.crates-io]
+# egui = { version = "0.5", git = "https://github.com/emilk/egui" }
+# egui_wgpu_backend = { path = "../egui_wgpu_backend" }
+# egui_winit_platform = { path = "../egui_winit_platform" }
