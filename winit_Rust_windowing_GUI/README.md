@@ -13,3 +13,6 @@
 - examples
   - https://github.com/rust-windowing/softbuffer
 
+
+- learn wgpu
+  - https://sotrh.github.io/learn-wgpu/
