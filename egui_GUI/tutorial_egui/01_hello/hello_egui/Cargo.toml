@@ -1,0 +1,9 @@
+[package]
+name = "hello_egui"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+eframe = { version = "0.26.2", features = ["default", "__screenshot"] }
+egui_extras = { version = "0.26.2", features = ["default", "image"] }
+env_logger = { version = "0.11.2", features = ["auto-color", "humantime"] }
