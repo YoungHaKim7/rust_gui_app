@@ -2,6 +2,7 @@
 
 - https://gtk-rs.org/gtk4-rs/stable/latest/book/introduction.html
 
+- gtk docs https://www.gtk.org/docs/
 
 <hr>
 
