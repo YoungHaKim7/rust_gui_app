@@ -7,6 +7,19 @@
 
 <hr>
 
+# ```pkg-config```version 맞춰주기
+
+
+```
+$ pkg-config --modversion gtk4
+
+4.6.9
+
+$ cargo add gtk4 --rename gtk --features v4_6
+
+```
+<hr>
+
 # Install
 
 - https://askubuntu.com/questions/101306/how-do-i-install-gtk-3-0
