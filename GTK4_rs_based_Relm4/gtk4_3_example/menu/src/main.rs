@@ -92,7 +92,7 @@ impl SimpleComponent for App {
 
     fn init(
         counter: Self::Init,
-        root: &Self::Root,
+        root: Self::Root,
         // root: &relm4::gtk4::ApplicationWindow,
         sender: ComponentSender<Self>,
     ) -> ComponentParts<Self> {
