@@ -8,6 +8,8 @@
 # Vulkan(API)
 
 - https://www.vulkan.org/
+  - Vulkanised 2024 | Vulkan 공식 유튜브
+    - https://youtube.com/playlist?list=PLMLurvdlOpWOh_nXIbXbBewWuERe-8xVW&si=qtukRIafDafmLA6j
 
 - https://namu.wiki/w/Vulkan(API)
 
