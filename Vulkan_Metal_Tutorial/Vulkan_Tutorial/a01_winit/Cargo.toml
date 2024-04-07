@@ -1,0 +1,11 @@
+[package]
+name = "a01_winit"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.81"
+pretty_env_logger = "0.5.0"
+winit = "0.29.15"
