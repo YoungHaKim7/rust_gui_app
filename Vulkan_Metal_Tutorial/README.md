@@ -13,3 +13,12 @@
 # NVIDIA
 
 - https://www.nvidia.com/en-us/drivers/unix/
+
+<hr>
+
+# Metal(macOS)
+
+
+<hr>
+
+# DirectX(WindowsOS)
