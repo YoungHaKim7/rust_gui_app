@@ -3,9 +3,9 @@ use vulkanalia::loader::{LibloadingLoader, LIBRARY};
 
 use log::info;
 use vulkanalia::prelude::v1_3::*;
-// use winit::window as vk_window;
 use vulkanalia::window as vk_window;
 use vulkanalia::Version;
+use vulkanalia_sys::Display;
 use winit::{
     dpi::LogicalSize,
     event::{Event, WindowEvent},
@@ -27,8 +27,9 @@ impl App {
         let loader = LibloadingLoader::new(LIBRARY)?;
         let entry = Entry::new(loader).map_err(|b| anyhow!("{}", b))?;
         let instance = create_instance(window, &entry)?;
+        let display = display.cast::<Display>();
 
-        let surface = vk_window::create_surface(&instance, window, _)?;
+        let surface = vk_window::create_surface(&instance, window, &display)?;
 
         Ok(Self { entry, instance })
     }
