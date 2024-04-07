@@ -1,10 +1,9 @@
 use anyhow::{anyhow, Result};
-use vulkanalia::loader::LIBRARY;
+use vulkanalia::loader::{LibloadingLoader, LIBRARY};
 
 use log::info;
 use vulkanalia::prelude::v1_3::*;
 // use winit::window as vk_window;
-use crate::vulkanalia;
 use vulkanalia::window as vk_window;
 use vulkanalia::Version;
 use winit::{

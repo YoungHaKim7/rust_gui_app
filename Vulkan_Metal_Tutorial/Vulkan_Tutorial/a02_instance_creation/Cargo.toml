@@ -10,5 +10,6 @@ edition = "2021"
 anyhow = "1.0.81"
 log = "0.4.21"
 pretty_env_logger = "0.5.0"
-vulkanalia = "0.23.0"
+vulkanalia = {path ="../vulkanalia"}
+vulkanalia-sys = {path ="../vulkanalia-sys"}
 winit = "0.29.15"
