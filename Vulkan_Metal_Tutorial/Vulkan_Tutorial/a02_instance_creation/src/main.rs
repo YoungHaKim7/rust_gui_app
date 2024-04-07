@@ -28,7 +28,7 @@ impl App {
         let entry = Entry::new(loader).map_err(|b| anyhow!("{}", b))?;
         let instance = create_instance(window, &entry)?;
 
-        let surface = vk_window::create_surface(&instance, window)?;
+        let surface = vk_window::create_surface(&instance, window, _)?;
 
         Ok(Self { entry, instance })
     }
@@ -49,7 +49,7 @@ unsafe fn create_instance(window: &Window, entry: &Entry) -> Result<Instance> {
         .engine_version(vk::make_version(1, 0, 0))
         .api_version(vk::make_version(1, 0, 0));
 
-    let mut extensions = vk_window::get_required_extensions(window)
+    let mut extensions = vk_window::get_required_instance_extensions(window)
         .iter()
         .map(|e| e.as_ptr())
         .collect::<Vec<_>>();
