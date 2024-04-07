@@ -1,3 +1,10 @@
+<p align="center">
+  <img width=180px src="https://github.com/YoungHaKim7/Cpp_Training/assets/67513038/1599aaad-3821-4abe-b40b-f7000f5ab0b7" />
+</p>
+
+
+<hr>
+
 # Vulkan(API)
 
 - https://www.vulkan.org/
