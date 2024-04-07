@@ -26,12 +26,15 @@ std = ["vulkanalia-sys/std"]
 no_std_error = ["vulkanalia-sys/no_std_error"]
 
 provisional = ["vulkanalia-sys/provisional"]
-window = ["raw-window-handle", "cocoa", "metal", "objc"]
+window = [ "cocoa", "metal", "objc"]
 
 [dependencies]
+cocoa = "0.25"
 
 libloading = { version = "0.8", optional = true }
-raw-window-handle = { version = "0.6", optional = true }
+metal = "0.27"
+objc = "0.2"
+raw-window-handle = { version = "0.6.0" }
 vulkanalia-sys = { version = "0.23", path = "../vulkanalia-sys", default-features = false }
 
 [target.'cfg(target_os = "macos")'.dependencies]

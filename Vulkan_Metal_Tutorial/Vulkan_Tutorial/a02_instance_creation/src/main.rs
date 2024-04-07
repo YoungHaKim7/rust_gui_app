@@ -27,9 +27,9 @@ impl App {
         let loader = LibloadingLoader::new(LIBRARY)?;
         let entry = Entry::new(loader).map_err(|b| anyhow!("{}", b))?;
         let instance = create_instance(window, &entry)?;
-        let display = display.cast::<Display>();
+        // let display = display.cast::<Display>();
 
-        let surface = vk_window::create_surface(&instance, window, &display)?;
+        // let surface = vk_window::create_surface(&instance, window, &display)?;
 
         Ok(Self { entry, instance })
     }

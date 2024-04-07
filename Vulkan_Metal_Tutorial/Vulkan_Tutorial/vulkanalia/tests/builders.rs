@@ -2,6 +2,7 @@ extern crate vulkanalia;
 
 use vulkanalia::chain::{input_chain, output_chain};
 use vulkanalia::prelude::v1_0::*;
+use vulkanalia::prelude::v1_3::*;
 
 #[test]
 fn test_push_next_one() {

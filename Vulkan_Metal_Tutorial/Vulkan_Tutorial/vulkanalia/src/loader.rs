@@ -64,7 +64,7 @@ pub trait Loader {
 }
 
 #[cfg(feature = "libloading")]
-mod libloading_loader {
+pub mod libloading_loader {
     use std::boxed::Box;
     use std::ffi::OsStr;
     use std::mem;
