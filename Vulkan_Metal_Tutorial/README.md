@@ -2,7 +2,9 @@
 
 - https://namu.wiki/w/Vulkan(API)
 
-- Vulkan tutorial 
+- Vulkan tutorial
+  - Vulkan(Rust Tutorial)
+    - https://kylemayes.github.io/vulkanalia/
   - https://vulkan.lunarg.com/doc/sdk/1.1.106.0/windows/getting_started.html
   - Vulkan-Guide
     - https://github.com/KhronosGroup/Vulkan-Guide
