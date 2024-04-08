@@ -12,3 +12,11 @@
 # Rust러스트로 metal API 관리하기
 
 - https://github.com/gfx-rs/metal-rs
+
+
+<hr>
+
+<br>
+
+# Getting started with Metal-cpp
+- https://developer.apple.com/metal/cpp/
