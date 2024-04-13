@@ -4,6 +4,23 @@
 - https://areweguiyet.com/
 - 레딧글 https://www.reddit.com/r/rust/comments/10wy4yw/rust_gui_framework/
 
+<hr>
+    
+- **[Vortex - OpenCL 호환 가능한 RISC-V 아키텍처 기반의 풀스택 오픈소스 GPGPU](<https://news.hada.io/topic?id=14297&utm_source=discord&utm_medium=bot&utm_campaign=1480>)**
+- RISC-V ISA 확장을 기반으로 GPGPU를 지원하는 오픈 소스 하드웨어 및 소프트웨어 프로젝트  
+- 현재는 OpenCL 1.2를 지원하며 FPGA에서 실행됨  
+- RISC-V RV32IMAF 와 RV64IMAFD 지원   
+- GPU 아키텍처 연구를 가능하게 하는 완전한 오픈 소스 컴파일러, 드라이버 및 런타임 소프트웨어 스택을 갖추고 있으며 높...
+  - OpenCL의 현재 상황:
+    - AMD와 Intel은 OpenCL에서 ROCm, DPC++ 등 다른 GPGPU 언어로 전환 중인 것으로 보임
+    - 그럼에도 불구하고 OpenCL은 최고의 컴퓨팅 API라는 의견도 있음
+  - GPU 컴퓨팅의 현 상황이 매우 복잡함:
+    - OpenGL, OpenCL: 널리 지원되나 최신 성능은 부족
+    - Vulkan, Metal, DirectX: 최신 그래픽 API로 좋은 드라이버 지원과 성능을 가짐
+    - CUDA, HIP: 사유 API로 CUDA는 NVIDIA GPU만, HIP은 AMD GPU도 지원
+    - SYCL: 이기종 컴퓨팅 프레임워크로 OpenCL/Vulkan 등의 코드 생성 가능
+    - WebGPU: 다양한 구현체가 있는 웹 표준
+  - 향후 5~10년 내 오픈소스 기반의 프로세서와 소프트웨어 발전에 대한 기대감이 있음
 
 <br>
 
