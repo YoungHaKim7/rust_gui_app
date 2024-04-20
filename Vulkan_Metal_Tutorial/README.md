@@ -13,6 +13,9 @@
 
 - https://namu.wiki/w/Vulkan(API)
 
+- Safe and rich Rust wrapper around the Vulkan API
+  - https://github.com/vulkano-rs/vulkano
+
 - Vulkan tutorial
   - Vulkan(Rust Tutorial)
     - https://kylemayes.github.io/vulkanalia/
