@@ -5,6 +5,9 @@
 - https://youtu.be/AJIyRE2vZ_0?si=FGasHww-MYvgvLdu
   - https://github.com/tsoding/blerp
 
+# Linux SDL2설치
+- https://wiki.libsdl.org/SDL2/Installation
+
 # 윈도우에 sdl2설치하기
 
 - mingw설치해야함
