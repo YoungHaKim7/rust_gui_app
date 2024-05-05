@@ -8,6 +8,22 @@
 # Linux SDL2설치
 - https://wiki.libsdl.org/SDL2/Installation
 
+```
+git clone https://github.com/libsdl-org/SDL
+cd SDL
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+cmake --build . --config Release --parallel
+
+#CMake >= 3.15
+sudo cmake --install . --config Release
+
+#CMake <= 3.14
+sudo make install
+```
+- https://wiki.libsdl.org/SDL2/SourceCode
+  
 # 윈도우에 sdl2설치하기
 
 - mingw설치해야함
