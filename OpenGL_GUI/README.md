@@ -10,6 +10,8 @@
 - mingw설치해야함
 
 - https://danmarkjajang.tistory.com/m/9
+- https://80000coding.oopy.io/6cea1c29-a2bc-426f-8fe1-8ae9994a8ae9
+
 
 - msys2로 설치 진행함
   - https://www.msys2.org/
