@@ -18,34 +18,40 @@
 
 
 Ralph의 발표에 큰 박수를 보내 주세요. 감사합니다.
-We're working on this project of building high-performance UI. It's under the Xilin kind of umbrella for the project, but I'm going to talk about, I'm going to give an overview of the pieces of it, but the call to action here is come and get involved in the project.
+
+- We're working on this project of building high-performance UI. It's under the Xilin kind of umbrella for the project, but I'm going to talk about, I'm going to give an overview of the pieces of it, but the call to action here is come and get involved in the project.
+ChatGPT
+  - 우리는 고성능 UI를 구축하는 프로젝트를 진행 중입니다. 이 프로젝트는 Xilin의 일종의 프로젝트 안에 있지만, 저는 여기서 그 구성 요소에 대한 개요를 제공할 거에요. 그러나 여기서의 콜 투 액션은 이 프로젝트에 참여해 주세요.
+
+- So first, I want to talk a little bit about the goals of the project. So the real focus of this entire thing is high performance. And that's actually a little bit of an unusual goal. Most of the time, you're more focused on developer experience, and so on and so forth. But we really feel like high performance is the niche. This is why you would use Rust to build UI.
+ChatGPT
+  - 먼저, 이 프로젝트의 목표에 대해 조금 이야기하고 싶습니다. 이 전체 프로젝트의 진정한 초점은 고성능입니다. 실제로 이것은 조금 이상한 목표입니다. 대부분의 경우에는 개발자 경험에 더 집중하는 편이지만, 우리는 고성능이 중요하다고 생각합니다. 이것이 Rust로 UI를 구축하는 이유입니다.
+    
+- That's driving a lot of the decisions that we're making. We're also focused on a very rich 2D graphics model. We want to have full access to vector graphics with all of the goodies like gradients and also really good font support. I'll talk about that a little bit more. Of course, that's what I do. But we don't want to just have something that's high-performance and rich but very hard to program. We also want to make a really ergonomic, easy-to-use API on top of that. And we want this to work on desktop and mobile. The project is being funded by Google. It's a research project that's being funded by Google Fonts. And the focus of that is Android apps. So we want to do both. We want to demonstrate a really good experience on Android, but I think the community is interested in desktop and other targets as well.
+ChatGPT
+  - 이러한 결정에 많은 영향을 미치고 있습니다. 또한 매우 풍부한 2D 그래픽 모델에도 집중하고 있습니다. 우리는 그래디언트와 같은 모든 기능을 갖춘 벡터 그래픽에 완전한 액세스를 원합니다. 또한 정말 좋은 글꼴 지원도 필요합니다. 좀 더 자세히 이야기하겠습니다. 물론, 그게 제가 하는 일이죠. 하지만 우리는 고성능과 풍부함만 가지고 있어서 프로그래밍이 매우 어렵다면 안 되겠습니다. 또한, 그 위에 정말 편안하고 사용하기 쉬운 API를 만들고 싶습니다. 그리고 이것을 데스크톱과 모바일에서 작동하도록 하고 싶습니다. 이 프로젝트는 Google에서 자금을 지원하고 있습니다. 이는 Google Fonts에서 자금을 지원하는 연구 프로젝트입니다. 이 프로젝트의 초점은 Android 앱입니다. 그래서 우리는 둘 다 하려고 합니다. Android에서 좋은 경험을 보여주고 싶지만, 커뮤니티는 데스크톱과 다른 타겟에도 관심이 있습니다.
+
+
+- This is a research project. The goals of this, we're not offering this as a product, you know, something that's fully ready to use out of the box. Maybe it will evolve into that over time, but the goals for right now are to discover, like, what is the best way to build UI in Rust and, you know, to what extent are we able to realize these goals of being extremely high performance and fully featured as a user interface.
 ChatGPT
 
-우리는 고성능 UI를 구축하는 프로젝트를 진행 중입니다. 이 프로젝트는 Xilin의 일종의 프로젝트 안에 있지만, 저는 여기서 그 구성 요소에 대한 개요를 제공할 거에요. 그러나 여기서의 콜 투 액션은 이 프로젝트에 참여해 주세요.
-So first, I want to talk a little bit about the goals of the project. So the real focus of this entire thing is high performance. And that's actually a little bit of an unusual goal. Most of the time, you're more focused on developer experience, and so on and so forth. But we really feel like high performance is the niche. This is why you would use Rust to build UI.
+  - 이것은 연구 프로젝트입니다. 이 프로젝트의 목표는 제품으로 제공되는 것이 아니라, 상자에서 꺼내서 즉시 사용할 수 있는 것이 아닙니다. 시간이 지나면 이것이 그렇게 진화될 수도 있지만, 현재의 목표는 Rust로 UI를 구축하는 가장 좋은 방법을 발견하는 것입니다. 그리고 우리가 얼마나 고성능이고 기능이 풍부한 사용자 인터페이스를 실현할 수 있는지에 대한 범위입니다.
+
+
+- We want to work with the community. This is maybe a little bit of a newer focus of the project, that we've been maybe a little bit siloed, maybe doing some of our own things. But as I go through the slides, you'll see that there are a number of decisions that we've made about how do we cooperate with the Rust ecosystem instead of just doing our own thing.
+ChatGPT
+  - 우리는 커뮤니티와 함께 일하고 싶습니다. 이것은 프로젝트의 조금 새로운 초점일 수 있습니다. 우리는 조금 격리되어 있었거나 자체적인 일을 하고 있을 수도 있습니다. 그러나 저는 슬라이드를 통해 진행하면서 우리가 어떤 결정을 내렸는지 볼 수 있을 것입니다. Rust 생태계와의 협력에 대해 어떻게 할 것인지에 대한 것이죠.
+
+
+- This is kind of a picture of what the problems that you need to solve in UI, and I want to point people to Nico. Nico Burns did a talk on Monday, and there's also a white paper that's coming out soon, and that work is giving a much more complete picture of what you're seeing on the screen here. But we are seeing the problem in layers. So there's a top layer, which is reactivity, and this could be provided, like each of these layers, each of these boxes could be provided by a number of different crates. So this reactivity could be provided by Dioxys or Leptos, and then I'll be talking a lot more about what we're doing with this. And then there's a middle layer, which is solving a lot of the guts of what's involved in UI, of having a full collection of widgets and having gestures and layout and your text editing. There's a lot of problems that need to be solved at that layer. And then there's also a really important layer at the bottom of infrastructure. How do you connect to the platform, and how do you do the basic functions of drawing, text rendering, getting to your GPU, and accessibility? I'll be talking a lot more about that.
+ChatGPT
+  - 이것은 UI에서 해결해야 할 문제들의 그림이며, Nico에게 주목하고 싶습니다. Nico Burns가 월요일에 발표를 했고, 곧 나올 화이트 페이퍼도 있습니다. 그 작업은 여기 화면에서 보이는 것의 훨씬 완전한 그림을 제공합니다. 하지만 우리는 문제를 층별로 보고 있습니다. 맨 위층은 반응성입니다. 이것은 각각의 층, 각각의 상자들이 여러 다른 크레이트로 제공될 수 있습니다. 이 반응성은 Dioxys나 Leptos에 의해 제공될 수 있으며, 저는 이에 대해 더 자세히 이야기하겠습니다. 그리고 중간층에는 UI의 내용을 해결하는 많은 내부 구조가 있습니다. 위젯의 전체 컬렉션과 제스처 및 레이아웃 및 텍스트 편집을 가지고 있는 것과 관련된 많은 문제들이 있습니다. 그리고 매우 중요한 하단의 인프라 레이어도 있습니다. 플랫폼에 연결하는 방법과 그래픽 처리 장치에 도달하는 방법, 그리고 접근성은 어떻게 하는지에 대해 더 많은 이야기를 나눌 것입니다.
+
+
+- So this is kind of our instantiation of this layered architecture. And so at the top level, we have the Xilin Reactive Architecture. In the middle layer, we have Masonry, which is our widget set, which does not depend on Xilin. So you could imagine using Masonry with Deoxys or Leptos. And then we're using Taffy for layout. And at the bottom, we have a mixture of things that are Rust ecosystem, like WinIT. We made a decision. We switched over in January from our own platform integration to using WinIT. And then a lot of the other things are things that we're building, that obviously we're building for use in Xilin, but we're also hoping can be used by other projects in the Rust ecosystem.
 ChatGPT
 
-먼저, 이 프로젝트의 목표에 대해 조금 이야기하고 싶습니다. 이 전체 프로젝트의 진정한 초점은 고성능입니다. 실제로 이것은 조금 이상한 목표입니다. 대부분의 경우에는 개발자 경험에 더 집중하는 편이지만, 우리는 고성능이 중요하다고 생각합니다. 이것이 Rust로 UI를 구축하는 이유입니다.
-That's driving a lot of the decisions that we're making. We're also focused on a very rich 2D graphics model. We want to have full access to vector graphics with all of the goodies like gradients and also really good font support. I'll talk about that a little bit more. Of course, that's what I do. But we don't want to just have something that's high-performance and rich but very hard to program. We also want to make a really ergonomic, easy-to-use API on top of that. And we want this to work on desktop and mobile. The project is being funded by Google. It's a research project that's being funded by Google Fonts. And the focus of that is Android apps. So we want to do both. We want to demonstrate a really good experience on Android, but I think the community is interested in desktop and other targets as well.
-ChatGPT
-
-이러한 결정에 많은 영향을 미치고 있습니다. 또한 매우 풍부한 2D 그래픽 모델에도 집중하고 있습니다. 우리는 그래디언트와 같은 모든 기능을 갖춘 벡터 그래픽에 완전한 액세스를 원합니다. 또한 정말 좋은 글꼴 지원도 필요합니다. 좀 더 자세히 이야기하겠습니다. 물론, 그게 제가 하는 일이죠. 하지만 우리는 고성능과 풍부함만 가지고 있어서 프로그래밍이 매우 어렵다면 안 되겠습니다. 또한, 그 위에 정말 편안하고 사용하기 쉬운 API를 만들고 싶습니다. 그리고 이것을 데스크톱과 모바일에서 작동하도록 하고 싶습니다. 이 프로젝트는 Google에서 자금을 지원하고 있습니다. 이는 Google Fonts에서 자금을 지원하는 연구 프로젝트입니다. 이 프로젝트의 초점은 Android 앱입니다. 그래서 우리는 둘 다 하려고 합니다. Android에서 좋은 경험을 보여주고 싶지만, 커뮤니티는 데스크톱과 다른 타겟에도 관심이 있습니다.
-This is a research project. The goals of this, we're not offering this as a product, you know, something that's fully ready to use out of the box. Maybe it will evolve into that over time, but the goals for right now are to discover, like, what is the best way to build UI in Rust and, you know, to what extent are we able to realize these goals of being extremely high performance and fully featured as a user interface.
-ChatGPT
-
-이것은 연구 프로젝트입니다. 이 프로젝트의 목표는 제품으로 제공되는 것이 아니라, 상자에서 꺼내서 즉시 사용할 수 있는 것이 아닙니다. 시간이 지나면 이것이 그렇게 진화될 수도 있지만, 현재의 목표는 Rust로 UI를 구축하는 가장 좋은 방법을 발견하는 것입니다. 그리고 우리가 얼마나 고성능이고 기능이 풍부한 사용자 인터페이스를 실현할 수 있는지에 대한 범위입니다.
-We want to work with the community. This is maybe a little bit of a newer focus of the project, that we've been maybe a little bit siloed, maybe doing some of our own things. But as I go through the slides, you'll see that there are a number of decisions that we've made about how do we cooperate with the Rust ecosystem instead of just doing our own thing.
-ChatGPT
-
-우리는 커뮤니티와 함께 일하고 싶습니다. 이것은 프로젝트의 조금 새로운 초점일 수 있습니다. 우리는 조금 격리되어 있었거나 자체적인 일을 하고 있을 수도 있습니다. 그러나 저는 슬라이드를 통해 진행하면서 우리가 어떤 결정을 내렸는지 볼 수 있을 것입니다. Rust 생태계와의 협력에 대해 어떻게 할 것인지에 대한 것이죠.
-This is kind of a picture of what the problems that you need to solve in UI, and I want to point people to Nico. Nico Burns did a talk on Monday, and there's also a white paper that's coming out soon, and that work is giving a much more complete picture of what you're seeing on the screen here. But we are seeing the problem in layers. So there's a top layer, which is reactivity, and this could be provided, like each of these layers, each of these boxes could be provided by a number of different crates. So this reactivity could be provided by Dioxys or Leptos, and then I'll be talking a lot more about what we're doing with this. And then there's a middle layer, which is solving a lot of the guts of what's involved in UI, of having a full collection of widgets and having gestures and layout and your text editing. There's a lot of problems that need to be solved at that layer. And then there's also a really important layer at the bottom of infrastructure. How do you connect to the platform, and how do you do the basic functions of drawing, text rendering, getting to your GPU, and accessibility? I'll be talking a lot more about that.
-ChatGPT
-
-이것은 UI에서 해결해야 할 문제들의 그림이며, Nico에게 주목하고 싶습니다. Nico Burns가 월요일에 발표를 했고, 곧 나올 화이트 페이퍼도 있습니다. 그 작업은 여기 화면에서 보이는 것의 훨씬 완전한 그림을 제공합니다. 하지만 우리는 문제를 층별로 보고 있습니다. 맨 위층은 반응성입니다. 이것은 각각의 층, 각각의 상자들이 여러 다른 크레이트로 제공될 수 있습니다. 이 반응성은 Dioxys나 Leptos에 의해 제공될 수 있으며, 저는 이에 대해 더 자세히 이야기하겠습니다. 그리고 중간층에는 UI의 내용을 해결하는 많은 내부 구조가 있습니다. 위젯의 전체 컬렉션과 제스처 및 레이아웃 및 텍스트 편집을 가지고 있는 것과 관련된 많은 문제들이 있습니다. 그리고 매우 중요한 하단의 인프라 레이어도 있습니다. 플랫폼에 연결하는 방법과 그래픽 처리 장치에 도달하는 방법, 그리고 접근성은 어떻게 하는지에 대해 더 많은 이야기를 나눌 것입니다.
-So this is kind of our instantiation of this layered architecture. And so at the top level, we have the Xilin Reactive Architecture. In the middle layer, we have Masonry, which is our widget set, which does not depend on Xilin. So you could imagine using Masonry with Deoxys or Leptos. And then we're using Taffy for layout. And at the bottom, we have a mixture of things that are Rust ecosystem, like WinIT. We made a decision. We switched over in January from our own platform integration to using WinIT. And then a lot of the other things are things that we're building, that obviously we're building for use in Xilin, but we're also hoping can be used by other projects in the Rust ecosystem.
-ChatGPT
-
-이것은 저희가 층별 아키텍처를 구현한 것입니다. 맨 위층에는 Xilin 반응형 아키텍처가 있습니다. 중간층에는 Xilin에 의존하지 않는 위젯 세트인 Masonry가 있습니다. 그래서 Masonry를 Deoxys나 Leptos와 함께 사용할 수 있다고 상상할 수 있습니다. 그리고 레이아웃에는 Taffy를 사용하고 있습니다. 맨 아래층에는 WinIT과 같은 Rust 생태계의 혼합물이 있습니다. 우리는 1월에 우리 자체의 플랫폼 통합에서 WinIT을 사용하도록 전환하는 결정을 내렸습니다. 그리고 다른 많은 것들은 우리가 구축 중인 것들입니다. 분명히 Xilin에서 사용하기 위해 구축 중이지만, Rust 생태계의 다른 프로젝트에서도 사용될 수 있기를 희망합니다.
+- 이것은 저희가 층별 아키텍처를 구현한 것입니다. 맨 위층에는 Xilin 반응형 아키텍처가 있습니다. 중간층에는 Xilin에 의존하지 않는 위젯 세트인 Masonry가 있습니다. 그래서 Masonry를 Deoxys나 Leptos와 함께 사용할 수 있다고 상상할 수 있습니다. 그리고 레이아웃에는 Taffy를 사용하고 있습니다. 맨 아래층에는 WinIT과 같은 Rust 생태계의 혼합물이 있습니다. 우리는 1월에 우리 자체의 플랫폼 통합에서 WinIT을 사용하도록 전환하는 결정을 내렸습니다. 그리고 다른 많은 것들은 우리가 구축 중인 것들입니다. 분명히 Xilin에서 사용하기 위해 구축 중이지만, Rust 생태계의 다른 프로젝트에서도 사용될 수 있기를 희망합니다.
 Again, Xylem is generic. There's a Xylem core, which is generic over the element tree that it's driving, so we can drive masonry widget set and also give a demo of using the Xylem core to drive DOM and create experience that can run in the browser.
 ChatGPT
 
@@ -117,29 +123,34 @@ ChatGPT
 
 
 
+<hr>
+
 
 
 39분 부터~~~
-We're very happy to be working with Matt Campbell, who is the real creator of AccessKit.
+- We're very happy to be working with Matt Campbell, who is the real creator of AccessKit.
 ChatGPT
 
-저희는 AccessKit의 실제 제작자인 Matt Campbell과 함께 일하게 되어 매우 기쁩니다.
-in combination with async, so how would you for example make an HTTP request?
+  - 저희는 AccessKit의 실제 제작자인 Matt Campbell과 함께 일하게 되어 매우 기쁩니다.
+
+
+- in combination with async, so how would you for example make an HTTP request?
+ChatGPT
+  - async와 결합해서, 예를 들어 HTTP 요청을 어떻게 만들까요?
+
+- We just ripped the async out, which is fun. But we had a prototype where we had async integrated fairly deeply, so you have the ability to do waking, which is, of course, the primary point at which async integrates with a UI toolkit on a per-widget basis. So, again, this is a prototype that we had working, and then when we were making various different transitions to win it, that was part of the thing that we ended up taking that out. But we are planning on bringing that back, so you absolutely would be able to have a widget that says, you know,
+ChatGPT
+  - 저희는 방금 async를 제거했는데, 재미있었어요. 그러나 async가 꽤 깊이 통합된 프로토타입이 있었어요. 그래서 UI 툴킷과 개별 위젯 단위로 통합되는 주요 지점에서 깨우기 기능을 수행할 수 있었죠. 그래서, 다시 말하지만, 이건 저희가 작동하던 프로토타입이었고, 다양한 전환을 하면서 그것을 제거하게 됐어요. 하지만 저희는 그것을 다시 도입할 계획이 있어서, 위젯이 그런 기능을 가지게 될 수 있을 겁니다.
+
+- DAFA network request, and then paint the widget based on the loading state while you're waiting for the request to come back. And so there's a prototype. I can point people to the code based on kind of an older version. This is why it's research. It's like we need to figure out the best way for all of these pieces to come together.
 ChatGPT
 
-async와 결합해서, 예를 들어 HTTP 요청을 어떻게 만들까요?
-We just ripped the async out, which is fun. But we had a prototype where we had async integrated fairly deeply, so you have the ability to do waking, which is, of course, the primary point at which async integrates with a UI toolkit on a per-widget basis. So, again, this is a prototype that we had working, and then when we were making various different transitions to win it, that was part of the thing that we ended up taking that out. But we are planning on bringing that back, so you absolutely would be able to have a widget that says, you know,
+  - DAFA 네트워크 요청을 하고, 요청이 돌아오는 동안 로딩 상태를 기반으로 위젯을 렌더링하는 거죠. 그래서 그런 프로토타입이 있습니다. 이전 버전을 기반으로 코드를 보여드릴 수 있습니다. 이런 이유로 연구가 필요한 겁니다. 모든 요소가 어떻게 가장 잘 결합될 수 있는지를 찾아내야 하니까요.
+
+- but it's planned.
 ChatGPT
 
-저희는 방금 async를 제거했는데, 재미있었어요. 그러나 async가 꽤 깊이 통합된 프로토타입이 있었어요. 그래서 UI 툴킷과 개별 위젯 단위로 통합되는 주요 지점에서 깨우기 기능을 수행할 수 있었죠. 그래서, 다시 말하지만, 이건 저희가 작동하던 프로토타입이었고, 다양한 전환을 하면서 그것을 제거하게 됐어요. 하지만 저희는 그것을 다시 도입할 계획이 있어서, 위젯이 그런 기능을 가지게 될 수 있을 겁니다.
-DAFA network request, and then paint the widget based on the loading state while you're waiting for the request to come back. And so there's a prototype. I can point people to the code based on kind of an older version. This is why it's research. It's like we need to figure out the best way for all of these pieces to come together.
-ChatGPT
-
-DAFA 네트워크 요청을 하고, 요청이 돌아오는 동안 로딩 상태를 기반으로 위젯을 렌더링하는 거죠. 그래서 그런 프로토타입이 있습니다. 이전 버전을 기반으로 코드를 보여드릴 수 있습니다. 이런 이유로 연구가 필요한 겁니다. 모든 요소가 어떻게 가장 잘 결합될 수 있는지를 찾아내야 하니까요.
-but it's planned.
-ChatGPT
-
-하지만 계획되어 있습니다.
+  - 하지만 계획되어 있습니다.
 I think this is the final question.
 ChatGPT
 
