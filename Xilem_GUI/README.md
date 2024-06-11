@@ -218,4 +218,69 @@ ChatGPT
 - It's heavily inspired by a tool I use called PLT Red X, which is this other programming language called Racket. And it's basically the same thing. It's like a lightweight tool for playing with type system definitions and letting you kind of use the notation that you might have read in an academic paper and put it into your computer and run it and play with it. Now, I just said that you might have read in an academic paper. But what I noticed is, shockingly, not that many people have actually read academic papers. They're kind of not designed for easy entry and understanding. And so what I thought I would do today is talk about how I think about it and how formality core, like use formality core and kind of to walk through a very simple type system and give you a feeling for what it looks like. And true fact, I have not done a dry run of this talk. I have no idea how long it's going to take. So either we're going to go way over or way under, and we'll take a bunch of questions. We're going to figure it out. It's going to be fun.
 ChatGPT
   - 이 Formality Core는 제가 사용하는 도구인 PLT Redex에서 크게 영감을 받았습니다. 이것은 Racket이라는 다른 프로그래밍 언어의 도구로, 타입 시스템 정의를 다루고, 여러분이 학술 논문에서 본 표기법을 컴퓨터에 입력하고 실행해보는 경량 도구입니다. 그런데 제가 학술 논문을 읽어봤을 수도 있다고 했지만, 사실 많은 사람들이 실제로 학술 논문을 읽지 않는다는 것을 알게 되었어요. 학술 논문은 쉽게 접근하고 이해하기에는 좀 어렵게 작성되어 있습니다. 그래서 오늘은 제가 어떻게 생각하는지, 그리고 Formality Core를 사용해서 아주 간단한 타입 시스템을 걸어보면서 설명하려고 합니다. 참고로, 이 발표를 리허설해본 적이 없어서 얼마나 걸릴지 전혀 모르겠어요. 그래서 시간이 많이 초과되거나 부족할 수도 있지만, 질문도 많이 받고 함께 해보겠습니다. 재미있을 거예요.
-  - 3분 56초
+
+- It's heavily inspired by a tool I use called PLT Red X, which is this other programming language called Racket. And it's basically the same thing. It's like a lightweight tool for playing with type system definitions and letting you kind of use the notation that you might have read in an academic paper and put it into your computer and run it and play with it. Now, I just said that you might have read in an academic paper. But what I noticed is, shockingly, not that many people have actually read academic papers. They're kind of not designed for easy entry and understanding. And so what I thought I would do today is talk about how I think about it and how formality core, like use formality core and kind of to walk through a very simple type system and give you a feeling for what it looks like. And true fact, I have not done a dry run of this talk. I have no idea how long it's going to take. So either we're going to go way over or way under, and we'll take a bunch of questions. We're going to figure it out. It's going to be fun.
+ChatGPT
+  - 이 Formality Core는 제가 사용하는 도구인 PLT Redex에서 크게 영감을 받았습니다. 이것은 Racket이라는 다른 프로그래밍 언어의 도구로, 타입 시스템 정의를 다루고, 여러분이 학술 논문에서 본 표기법을 컴퓨터에 입력하고 실행해보는 경량 도구입니다. 그런데 제가 학술 논문을 읽어봤을 수도 있다고 했지만, 사실 많은 사람들이 실제로 학술 논문을 읽지 않는다는 것을 알게 되었어요. 학술 논문은 쉽게 접근하고 이해하기에는 좀 어렵게 작성되어 있습니다. 그래서 오늘은 제가 어떻게 생각하는지, 그리고 Formality Core를 사용해서 아주 간단한 타입 시스템을 걸어보면서 설명하려고 합니다. 참고로, 이 발표를 리허설해본 적이 없어서 얼마나 걸릴지 전혀 모르겠어요. 그래서 시간이 많이 초과되거나 부족할 수도 있지만, 질문도 많이 받고 함께 해보겠습니다. 재미있을 거예요.
+
+- But part of this is, you know, I didn't really learn. I never really took a course on type systems, actually. I just kind of read things, and eventually it sort of made sense. So, I'm going to be telling you kind of my way of thinking about it. Probably some people who have actually studied this kind of thing will have their own opinions. So, the way I think about formality core, anyway, is that…
+ChatGPT
+  - 하지만 이건 제가 사실 정식으로 타입 시스템에 대한 과정을 듣지 않았다는 부분과도 관련이 있어요. 저는 그냥 자료들을 읽으면서 스스로 이해한 거죠. 그래서 제가 여러분께 제 방식으로 어떻게 생각하는지 설명하려고 해요. 이 분야를 정식으로 공부한 사람들은 다른 의견이 있을 수도 있지만, 제 관점에서 본 formality core는…
+
+- Anyway, is that
+ChatGPT
+  - 어쨌든, 제가 생각하는 formality core는 타입 시스템의 기본적인 개념을 실험하고 이해하는 데 도움을 주는 도구라는 점이에요. 이를 통해 다양한 타입 시스템을 모델링하고, Rust의 타입 시스템을 더 잘 이해할 수 있게 돕는 거죠.
+ 
+- in parallel systems before, like in Java. Actually, I'm going to tell you an anecdote because it's funny. One of the first courses that was taught in Rust was a systems programming course at Northeastern, and they went through and they taught the students Rust, and they got up to concurrency, and then they had a problem because they wanted to teach them about data races, but they couldn't produce them. So they said, okay, we're going to stop, and we're going to teach you Java, and then you're going to learn Java. Now look at this horrible bug. Okay, let's go back to Rust. Now you don't have this bug. Okay, good. So Rust kind of made...
+ChatGPT
+  - 병렬 시스템에서도 경험이 있어요, 예를 들어 Java에서요. 사실 재미있는 일화를 하나 드릴게요. Rust가 처음으로 가르쳐진 과목 중 하나가 Northeastern 대학에서 시스템 프로그래밍 과목인데요, 학생들에게 Rust를 가르치고 병행성에 도달했을 때 데이터 레이스에 대해 가르치려고 했는데, 문제가 생겼어요. 왜냐하면 데이터 레이스를 발생시킬 수가 없었거든요. 그래서 "좋아, 여기서 멈추고 Java를 가르칠게요. 자, 이런 심각한 버그를 보세요. 이제 Rust로 돌아가 보세요. 이제 이 버그가 없죠. 좋아요." 이렇게 하면서 Rust는...
+
+- That is the true story. But Rust made concurrency this thing, at least my experience of it, is, yeah, I can still have bugs, but it's kind of like I plug it together, and I can think about it, and experiment with it, and if it kind of works, it usually works all the way up. If it works for simple stuff, it works also for many complicated cases. Formality core has the same feeling. I want to bring that same feeling, but to experimenting with type systems.
+ChatGPT
+  - 그 이야기는 사실입니다. 하지만 Rust는 병렬성을 이런 식으로 만들어 냈어요. 적어도 제 경험 상으로는, 예, 여전히 버그가 발생할 수 있지만, 그것을 조합하고 생각하고 실험해볼 수 있고, 그것이 작동한다면 보통은 모든 경우에 작동합니다. 간단한 것에 대해 작동한다면, 복잡한 경우에도 작동합니다. Formality core도 같은 느낌을 줍니다. 제가 원하는 것은 동일한 느낌을 가져다주지만, 타입 시스템 실험에 적용하는 것이에요.
+
+- So here's the language we're going to walk through, called EG. And it does various, well, it's kind of a calculator, fancy calculator. So like this program.
+ChatGPT
+  - 그래서 여기 우리가 살펴볼 언어가 있습니다. EG라고 불리는 언어인데요, 이것은 다양한 기능을 갖춘 계산기와 같은 것이에요. 예를 들어 이 프로그램처럼요.
+
+- When you run it.
+ChatGPT
+  - 실행하면요,
+
+- You can have tuples, and they will be added up pairwise.
+ChatGPT
+  - 튜플을 가질 수 있으며, 튜플은 쌍으로 추가됩니다.
+
+- so, and you can call them with this weird at sign, which is because of a limitation I'll explain later. And you can even have generics. So all of these are actually runnable examples in the program, and part of what I'm going to do today is kind of
+ChatGPT
+  - 그래서, 그리고 이상한 at 기호로 호출할 수 있습니다. 이것은 나중에 설명할 제한 때문입니다. 그리고 심지어 제네릭도 사용할 수 있습니다. 이 모든 것들은 사실 실행 가능한 예제들이고, 오늘 제가 할 일 중 하나는 이 프로그램에서 실행 가능한 예제를 보여주는 것입니다.
+
+- Oh, wait, someone earlier did this. I forget who. I think it was the first talk. Let's start with a cargo clean, just because.
+ChatGPT
+  - 오, 기다려요. 이걸 누군가 이전에 했었어요. 누군지 기억이 안 나는데요. 제일 처음에 했던 것 같아요. 그냥 시작하기 전에 cargo clean부터 해봐요.
+
+- So, when you build something in this, it really is just a Rust program that you can work with. Let's see, source, or where did I put the tests? Under source, test, talk examples, right. So, for example, here's that first one. Hopefully, you can read it.
+ChatGPT
+  - 그래서, 이것을 빌드하면 진정으로 작업할 수 있는 Rust 프로그램입니다. 자, 소스를 보거나 테스트를 어디에 넣었죠? 소스, 테스트, 톡 예제 아래, 맞아요. 예를 들어, 여기가 첫 번째 것입니다. 바라건대 읽을 수 있을 거예요.
+
+- Executing 22 plus 44 gives me 66, and so on, right?
+ChatGPT
+  - 22 더하기 44를 실행하면 66이 나옵니다. 그리고 이런 식으로 계속 됩니다, 맞아요.
+
+- How do we define a programming language in a more formal way? What am I doing here? Oh, I'm just showing you that what I am not modeling in this definition is type inference. So you can have generics, but you do have to specify their values explicitly.
+ChatGPT
+  - 어떻게 더 형식적인 방식으로 프로그래밍 언어를 정의할까요? 여기서 무엇을 하고 있나요? 아, 저는 여기서 타입 추론을 모델링하지 않는다는 것을 보여주고 있네요. 그래서 제네릭을 사용할 수 있지만, 값은 명시적으로 지정해야 합니다.
+
+- That makes things a lot easier, actually. So, how do we define a program more formally? It starts out with something called a grammar. How many of you have heard of grammars? Okay, good.
+ChatGPT
+  - 실제로 이렇게 하면 훨씬 쉬워요. 그래서, 프로그램을 어떻게 더 형식적으로 정의할까요? 우선, 무언가를 시작하는데 그것은 문법이라고 하는 것입니다. 문법에 대해 들어보신 분들은 몇 분이나 계시나요? 좋아요, 좋아요.
+
+- I wouldn't have to explain it too much. But basically, that defines the syntax, right? So, you might write something like, oh, a program and eg is a series of function definitions, you know, zero or more, followed by some expression that's going to compute the value. Well, in Formality Core, we're going to define that, but we're going to do it with a rough structure.
+ChatGPT
+  - 너무 많이 설명할 필요는 없겠죠. 그럼 기본적으로 그것은 문법을 정의하는 것이죠? 그래서, 프로그램과 eg는 함수 정의들의 연속이죠, 0개 이상, 그 다음에 값이 계산될 표현식이 따라올 거에요. 그런데, Formality Core에서는 그것을 정의할 거지만, 조금 거친 구조로 할 거에요.
+
+- Yeah, so we might have this struct saying this is what a program is, and you can see it has fields, and you put an annotation on it called term, and that's a kind of bit of PL programming language jargon. A term is basically just a thing, something that you're a part of your program, or a value, or something we're going to talk about, essentially. We need a word for a thing, so term is it, and in here, you put the grammar.
+ChatGPT
+  - 그래요, 그래서 우리는 프로그램이 무엇인지를 정의하는 이런 구조를 가질 수 있습니다. 그리고 그것은 필드를 가지고 있으며, term이라는 주석을 달 수 있습니다. 그리고 그것은 PL 프로그래밍 언어 용어의 한 부분입니다. term은 기본적으로 프로그램의 부분이거나 값이거나, 우리가 이야기할 것 중 하나입니다. 우리는 무엇인가를 가리키는 단어가 필요하기 때문에 term이 그것입니다. 그리고 여기에는 문법을 넣습니다.
+
+   - 8분 10초
