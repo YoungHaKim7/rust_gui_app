@@ -1,5 +1,7 @@
 # link
 
+- [240605강의내용github](https://github.com/rustnl/meetups/tree/main/20240507-delft/slides)
+
 - [240605xilem-lets-build-high-performance-rust-ui---raph-levien--rust-nederland-rustnl](#240605xilem-lets-build-high-performance-rust-ui---raph-levien--rust-nederland-rustnl)
 
 - [240605type-theory-for-busy-engineers---niko-matsakis--rust-nederland-rustnl](#type-theory-for-busy-engineers---niko-matsakis--rust-nederland-rustnl)
