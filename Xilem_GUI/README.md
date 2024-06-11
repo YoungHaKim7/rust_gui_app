@@ -6,7 +6,9 @@
     - https://raphlinus.github.io/rust/gui/2022/05/07/ui-architecture.html
     - https://news.hada.io/topic?id=6519
 
-
+![1](https://github.com/YoungHaKim7/Cpp_Training/assets/67513038/e550734d-059b-4953-a011-9b315c9c8fa2)
+- https://youtu.be/OvfNipIcRiQ?si=vn6pX8pVNB1dqSYq
+  
 # 최신글 
 - 240119 https://linebender.org/blog/xilem-backend-roadmap/
 
