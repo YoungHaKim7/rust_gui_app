@@ -162,22 +162,22 @@ ChatGPT
 ChatGPT
 
   - 하지만 계획되어 있습니다.
-I think this is the final question.
-ChatGPT
 
-이게 마지막 질문인 것 같네요.
-Hello, I've also been following your work for some time and I remember in Druid there was this a bit bizarre layer of integration with the system like file dialogues and application persistence with window closing. What did you do with that in the new Xilib architecture?
+- I think this is the final question.
 ChatGPT
+  - 이게 마지막 질문인 것 같네요.
 
-안녕하세요, 저는 당신의 작업을 오랫동안 지켜봐 왔고, Druid에서는 파일 대화 상자와 창 닫기 시 애플리케이션 지속성과 같은 시스템 통합 계층이 좀 이상하게 보였던 걸로 기억합니다. 새로운 Xilib 아키텍처에서는 그것을 어떻게 처리하셨나요?
-Well, I mean, the platform integration, we've just switched over to WinIT, and that does mean that we have a regress, so there is not a file open dialogue in Xilem at the moment. And so we do plan on porting that stuff on top of WinIT. I think there's some really good questions of, you know, do we do that in a way that's specific to Xilem, or do we try and make a more general crate that could be used by other, maybe other things in the Rust UI ecosystem? I think that's a little bit open. Like, the current state is, you know, we're trying to get the new infrastructure really functioning, and then pull in pieces from the kind of previous Druid. Yeah, one.
+- Hello, I've also been following your work for some time and I remember in Druid there was this a bit bizarre layer of integration with the system like file dialogues and application persistence with window closing. What did you do with that in the new Xilib architecture?
 ChatGPT
+  - 안녕하세요, 저는 당신의 작업을 오랫동안 지켜봐 왔고, Druid에서는 파일 대화 상자와 창 닫기 시 애플리케이션 지속성과 같은 시스템 통합 계층이 좀 이상하게 보였던 걸로 기억합니다. 새로운 Xilib 아키텍처에서는 그것을 어떻게 처리하셨나요?
 
-글쎄요, 플랫폼 통합에 대해서는, 저희가 WinIT로 전환했는데, 그로 인해 퇴보가 있었습니다. 현재 Xilem에는 파일 열기 대화 상자가 없어요. 그래서 그것을 WinIT 위에 이식할 계획입니다. Xilem에만 특화된 방식으로 할지, 아니면 Rust UI 생태계의 다른 요소들도 사용할 수 있는 더 일반적인 크레이트로 만들지에 대한 좋은 질문이 있다고 생각합니다. 이는 조금 열려 있는 부분인 것 같아요. 현재 상태는 새로운 인프라를 제대로 작동하게 만든 후, 이전 Druid에서 일부 요소를 가져오는 것입니다. 네, 그렇습니다.
-TouchGrade was mentioned earlier today. I don't remember the name, but yeah.
+- Well, I mean, the platform integration, we've just switched over to WinIT, and that does mean that we have a regress, so there is not a file open dialogue in Xilem at the moment. And so we do plan on porting that stuff on top of WinIT. I think there's some really good questions of, you know, do we do that in a way that's specific to Xilem, or do we try and make a more general crate that could be used by other, maybe other things in the Rust UI ecosystem? I think that's a little bit open. Like, the current state is, you know, we're trying to get the new infrastructure really functioning, and then pull in pieces from the kind of previous Druid. Yeah, one.
 ChatGPT
+  - 글쎄요, 플랫폼 통합에 대해서는, 저희가 WinIT로 전환했는데, 그로 인해 퇴보가 있었습니다. 현재 Xilem에는 파일 열기 대화 상자가 없어요. 그래서 그것을 WinIT 위에 이식할 계획입니다. Xilem에만 특화된 방식으로 할지, 아니면 Rust UI 생태계의 다른 요소들도 사용할 수 있는 더 일반적인 크레이트로 만들지에 대한 좋은 질문이 있다고 생각합니다. 이는 조금 열려 있는 부분인 것 같아요. 현재 상태는 새로운 인프라를 제대로 작동하게 만든 후, 이전 Druid에서 일부 요소를 가져오는 것입니다. 네, 그렇습니다.
 
-오늘 아침에 TouchGrade가 언급되었어요. 이름은 기억나지 않지만, 맞아요.
+- TouchGrade was mentioned earlier today. I don't remember the name, but yeah.
+ChatGPT
+  - 오늘 아침에 TouchGrade가 언급되었어요. 이름은 기억나지 않지만, 맞아요.
 Okay, so give a huge hand to Ralph for his talk. Thank you.
 
 
