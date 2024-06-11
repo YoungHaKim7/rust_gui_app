@@ -1,5 +1,9 @@
 # link
 
+- [240605xilem-lets-build-high-performance-rust-ui---raph-levien--rust-nederland-rustnl](#240605xilem-lets-build-high-performance-rust-ui---raph-levien--rust-nederland-rustnl)
+
+- [240605type-theory-for-busy-engineers---niko-matsakis--rust-nederland-rustnl](#type-theory-for-busy-engineers---niko-matsakis--rust-nederland-rustnl)
+
 <hr>
 
 # Xilem
