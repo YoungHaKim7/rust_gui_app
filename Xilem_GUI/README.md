@@ -182,3 +182,8 @@ Okay, so give a huge hand to Ralph for his talk. Thank you.
 
 
 <hr>
+
+<br>
+
+- Type Theory for Busy Engineers - Niko Matsakis | Rust Nederland (RustNL)
+  - https://youtu.be/9qLACD9Bfbk?si=jNu4BcHI7-1s4tKy
