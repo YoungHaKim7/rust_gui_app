@@ -18,7 +18,7 @@
 
 <hr>
 
-# (240605)Xilem: Let's Build High Performance Rust UI - Raph Levien | Rust Nederland (RustNL)
+# (240605)Xilem: Let's Build High Performance Rust UI - Raph Levien | Rust Nederland (RustNL)[[🔝]](#link)
 - https://youtu.be/OvfNipIcRiQ?si=vn6pX8pVNB1dqSYq
   - 강의내용 github https://github.com/rustnl/meetups/tree/main/20240507-delft/slides
 
@@ -194,7 +194,7 @@ Okay, so give a huge hand to Ralph for his talk. Thank you.
 <br>
 
 
-# Type Theory for Busy Engineers - Niko Matsakis | Rust Nederland (RustNL)
+# Type Theory for Busy Engineers - Niko Matsakis | Rust Nederland (RustNL)[[🔝]](#link)
 - https://youtu.be/9qLACD9Bfbk?si=jNu4BcHI7-1s4tKy
 
 - Hmm, let's see. It's possible that the VoiceOver settings might need to be adjusted for it to read out loud. Sometimes there could be a delay or a glitch in the system. Would you like me to guide you through checking the VoiceOver settings to ensure it's properly configured?
