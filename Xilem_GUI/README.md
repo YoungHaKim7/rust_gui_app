@@ -1,3 +1,7 @@
+# link
+
+<hr>
+
 # Xilem
 - An experimental Rust native UI framework
 - https://github.com/linebender/xilem
@@ -14,9 +18,9 @@
 
 <hr>
 
-- (240605)Xilem: Let's Build High Performance Rust UI - Raph Levien | Rust Nederland (RustNL)
-  - https://youtu.be/OvfNipIcRiQ?si=vn6pX8pVNB1dqSYq
-    - 강의내용 github https://github.com/rustnl/meetups/tree/main/20240507-delft/slides
+# (240605)Xilem: Let's Build High Performance Rust UI - Raph Levien | Rust Nederland (RustNL)
+- https://youtu.be/OvfNipIcRiQ?si=vn6pX8pVNB1dqSYq
+  - 강의내용 github https://github.com/rustnl/meetups/tree/main/20240507-delft/slides
 
 
 Ralph의 발표에 큰 박수를 보내 주세요. 감사합니다.
@@ -190,8 +194,8 @@ Okay, so give a huge hand to Ralph for his talk. Thank you.
 <br>
 
 
-- Type Theory for Busy Engineers - Niko Matsakis | Rust Nederland (RustNL)
-  - https://youtu.be/9qLACD9Bfbk?si=jNu4BcHI7-1s4tKy
+# Type Theory for Busy Engineers - Niko Matsakis | Rust Nederland (RustNL)
+- https://youtu.be/9qLACD9Bfbk?si=jNu4BcHI7-1s4tKy
 
 - Hmm, let's see. It's possible that the VoiceOver settings might need to be adjusted for it to read out loud. Sometimes there could be a delay or a glitch in the system. Would you like me to guide you through checking the VoiceOver settings to ensure it's properly configured?
 So, I'm going to talk about type theory for Bitly engineers. So, normally, at least lately, I feel like I'm giving talks about Rust roadmap and Rust features and things like that, and I decided to do something a little bit different. So, yeah, who am I? Well, as I guess a legend, I was going to make me feel a little blushy right now, but yeah, I work on the Rust system and on the Rust language, and I've been doing that a long time.
