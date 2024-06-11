@@ -185,5 +185,37 @@ Okay, so give a huge hand to Ralph for his talk. Thank you.
 
 <br>
 
+<hr>
+
+<br>
+
+
 - Type Theory for Busy Engineers - Niko Matsakis | Rust Nederland (RustNL)
   - https://youtu.be/9qLACD9Bfbk?si=jNu4BcHI7-1s4tKy
+
+- Hmm, let's see. It's possible that the VoiceOver settings might need to be adjusted for it to read out loud. Sometimes there could be a delay or a glitch in the system. Would you like me to guide you through checking the VoiceOver settings to ensure it's properly configured?
+So, I'm going to talk about type theory for Bitly engineers. So, normally, at least lately, I feel like I'm giving talks about Rust roadmap and Rust features and things like that, and I decided to do something a little bit different. So, yeah, who am I? Well, as I guess a legend, I was going to make me feel a little blushy right now, but yeah, I work on the Rust system and on the Rust language, and I've been doing that a long time.
+ChatGPT
+  - 오늘은 Bitly 엔지니어들을 위한 타입 이론에 대해 이야기해보려고 합니다. 보통은 러스트 로드맵이나 러스트 기능 등에 대해 이야기를 많이 하지만, 이번에는 조금 다른 주제를 선택했습니다. 그래서, 네, 제가 누구냐면요. 제 소개를 하려니 조금 부끄럽네요. 저는 러스트 시스템과 러스트 언어 작업을 하고 있습니다. 그리고 꽤 오랜 시간 동안 이 일을 해왔습니다.
+
+- One of the things I've noticed along the way is, you know, at first when we were building out and designing aspects of Rust, we would do like little models. So, we would say, okay, we want to think about how the type system should work. I'm going to figure out, just think about this part in isolation, and that can get you really, really far, right? And then we would think about a different part. And so we draft, make a model, a sort of some subset of Rust that's relevant, and just think about that part. But we've gotten to the point now where actually it's becoming kind of hard to keep the whole thing in your head, and we have unexpected interactions, you know, or little problems that arise. And so I've gotten interested in how can we make a better model that will help us understand and extend Rust going forward, and think about the new things that Rust should do, right? So, the goal is to make...
+ChatGPT
+  - 우리가 러스트를 구축하고 설계하면서 처음에는 작은 모델을 만들곤 했습니다. 그래서 "타입 시스템이 어떻게 작동해야 할지 생각해보자"고 하면서 이 부분만 고립시켜서 고민했죠. 이런 식으로 접근하면 꽤 멀리 갈 수 있습니다. 그런 다음에는 다른 부분을 생각했습니다. 그래서 러스트의 관련된 일부분을 모델로 작성하고 그 부분만 고민했습니다. 그런데 이제는 전체를 머릿속에 모두 담아두기가 어려워졌고, 예기치 못한 상호작용이나 작은 문제가 발생하기도 합니다. 그래서 어떻게 하면 러스트를 더 잘 이해하고 확장할 수 있는 더 나은 모델을 만들 수 있을지에 대해 관심이 생겼습니다. 앞으로 러스트가 어떤 새로운 기능을 갖춰야 할지 생각하는 데 도움이 되는 모델을 만드는 것이 목표입니다.
+ 
+- Take something that lets you kind of play with the type system and experiment with it in prototype. Not to build a shippable compiler, but to help you understand Rust as it is today and where it might go. And then along the way...
+ChatGPT
+  - 타입 시스템을 가지고 놀고 실험할 수 있는 무언가를 만들어 프로토타입으로 활용하는 것이죠. 실제 배포 가능한 컴파일러를 만드는 것이 아니라, 현재의 러스트를 이해하고 향후 러스트가 나아갈 방향을 모색하는 데 도움을 주는 것이 목적입니다. 그렇게 하면서...
+
+
+- mirror formality. I was told I need to explain this for non-native Rust speakers. So, there's an expression we say, oh, that's just a mirror formality. Like, it's a tiny little detail that you can get past. And in this case, mirror is also the mid-level IR, the middle IR of the compiler. So, that was the pun of this project. But the goal is to basically model, in a formal-ish way, how the type checker works, especially for the mid-level IR. So, not really all the way to Rust surface syntax yet.
+ChatGPT
+  - 미러 형식성(mirror formality)에 대해 설명할 필요가 있다고 들었어요. '그건 그냥 형식적인 절차일 뿐이다'라는 표현이 있는데, 이 경우 '미러'는 컴파일러의 중간 표현(IR)을 의미해요. 그래서 이 프로젝트의 말장난이 되었죠. 하지만 목표는 타입 체커가 어떻게 작동하는지, 특히 중간 표현(IR) 수준에서 형식적으로 모델링하는 것입니다. 아직 러스트의 표면 구문까지는 가지 않아요.
+
+- about mere formality here right now. What I'm going to talk about is a subset of it that I call Formality Core, mostly because formality was already taken on Crates.io. I don't remember by whom. I should find them out. But it's like a reusable part of it that you could use to model your own type systems if you were designing a language, like some people we saw today, like the really cool June language and so forth. Maybe it might be useful to them. I don't know. I found it fun for my own experiments.
+ChatGPT
+  - 여기서 이야기하려는 것은 미러 형식성(Mere Formality)의 일부인 Formality Core라고 부르는 것입니다. 주로 Crates.io에서 'formality'라는 이름이 이미 사용 중이었기 때문입니다. 누가 사용 중인지는 기억이 안 나네요. 찾아봐야겠어요. 어쨌든, 이것은 언어를 설계할 때 여러분이 자신만의 타입 시스템을 모델링할 수 있는 재사용 가능한 부분입니다. 오늘 본 것처럼 멋진 June 언어 같은 것도 포함해서요. 그들에게 유용할지 모르겠지만, 제 실험에는 재미있었습니다.
+
+- It's heavily inspired by a tool I use called PLT Red X, which is this other programming language called Racket. And it's basically the same thing. It's like a lightweight tool for playing with type system definitions and letting you kind of use the notation that you might have read in an academic paper and put it into your computer and run it and play with it. Now, I just said that you might have read in an academic paper. But what I noticed is, shockingly, not that many people have actually read academic papers. They're kind of not designed for easy entry and understanding. And so what I thought I would do today is talk about how I think about it and how formality core, like use formality core and kind of to walk through a very simple type system and give you a feeling for what it looks like. And true fact, I have not done a dry run of this talk. I have no idea how long it's going to take. So either we're going to go way over or way under, and we'll take a bunch of questions. We're going to figure it out. It's going to be fun.
+ChatGPT
+  - 이 Formality Core는 제가 사용하는 도구인 PLT Redex에서 크게 영감을 받았습니다. 이것은 Racket이라는 다른 프로그래밍 언어의 도구로, 타입 시스템 정의를 다루고, 여러분이 학술 논문에서 본 표기법을 컴퓨터에 입력하고 실행해보는 경량 도구입니다. 그런데 제가 학술 논문을 읽어봤을 수도 있다고 했지만, 사실 많은 사람들이 실제로 학술 논문을 읽지 않는다는 것을 알게 되었어요. 학술 논문은 쉽게 접근하고 이해하기에는 좀 어렵게 작성되어 있습니다. 그래서 오늘은 제가 어떻게 생각하는지, 그리고 Formality Core를 사용해서 아주 간단한 타입 시스템을 걸어보면서 설명하려고 합니다. 참고로, 이 발표를 리허설해본 적이 없어서 얼마나 걸릴지 전혀 모르겠어요. 그래서 시간이 많이 초과되거나 부족할 수도 있지만, 질문도 많이 받고 함께 해보겠습니다. 재미있을 거예요.
+  - 3분 56초
