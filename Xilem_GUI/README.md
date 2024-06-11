@@ -9,3 +9,6 @@
 
 # 최신글 
 - 240119 https://linebender.org/blog/xilem-backend-roadmap/
+
+- (240605)Xilem: Let's Build High Performance Rust UI - Raph Levien | Rust Nederland (RustNL)
+  - https://youtu.be/OvfNipIcRiQ?si=vn6pX8pVNB1dqSYq
