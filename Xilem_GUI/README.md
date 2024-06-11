@@ -16,7 +16,7 @@
   - https://youtu.be/OvfNipIcRiQ?si=vn6pX8pVNB1dqSYq
     - 강의내용 github https://github.com/rustnl/meetups/tree/main/20240507-delft/slides
 
-```
+
 Ralph의 발표에 큰 박수를 보내 주세요. 감사합니다.
 We're working on this project of building high-performance UI. It's under the Xilin kind of umbrella for the project, but I'm going to talk about, I'm going to give an overview of the pieces of it, but the call to action here is come and get involved in the project.
 ChatGPT
@@ -157,4 +157,4 @@ ChatGPT
 
 오늘 아침에 TouchGrade가 언급되었어요. 이름은 기억나지 않지만, 맞아요.
 Okay, so give a huge hand to Ralph for his talk. Thank you.
-```
+
