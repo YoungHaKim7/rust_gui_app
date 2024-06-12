@@ -349,4 +349,176 @@ ChatGPT
 ChatGPT
   - 계속해서 플러스, 마이너스, 곱셈, 그리고 별표 연산자도 추가해 보겠습니다.
 
-   - 8분 10초
+
+
+- The minor point is, if you have recursive types, it's still Rust. They have to have ARC, otherwise the type would have infinite size. That's no problem, and so on.
+ChatGPT
+- 맞습니다. 재귀적인 유형이 있으면 레퍼런스를 통해 참조 계수화된 ARC(Automatic Reference Counting)를 사용해야 합니다. 그렇지 않으면 유형이 무한하게 커집니다.
+
+
+- non-obvious like let. So here we're declaring a local variable. It's going to be called id or whatever. It's going to have an initial value. It's going to execute an expression. That's going to look like this.
+ChatGPT
+- 네, 이 코드에서 let은 변수를 선언하는 Rust의 문법입니다. id라는 로컬 변수를 선언하고, 초기값을 설정합니다. 그 다음으로 표현식을 실행합니다.
+
+- And so on. OK, you get the idea. So let's look at an example. Now, we wanted to write some tests, right? Because the whole idea of this is you can write this grammar and then play with it. Let me see where I have some tests. OK, here we go.
+ChatGPT
+
+Sure, let's take a look at the tests.
+
+
+- Question mark, that's the normal debug input. You'd get something that's generated with the grammar in mind, a pretty printed version of it.
+ChatGPT
+  - 물음표는 일반적인 디버그 입력입니다. 문법을 고려하여 생성된 내용을 pretty print 버전으로 받게 됩니다.
+
+- If you ask for the full detail with the hash sign, then you actually get the standard thing you get from a debuggable. This is pretty useful when you're writing tests of the parsing, because it gives you all the detail. And as some people who've played with my systems before will tell you, or when we didn't have this, it's kind of helpful when you're learning if you really want to know exactly what data structure you've got. In this case, in particular, we can see that the multiplication had higher precedence, right? We parsed.
+ChatGPT
+  - 물음표를 사용하면 pretty print 버전을 받지만, 해시 기호를 사용하여 전체 세부 사항을 요청하면 일반적인 디버그 출력을 받습니다. 이는 구문 분석 테스트를 작성할 때 매우 유용합니다. 시스템을 처음 배우는 사람들에게는 정확히 어떤 데이터 구조를 가지고 있는지 알 수 있어 도움이 됩니다. 이 경우 특히, 곱셈이 더 높은 우선순위를 가진다는 것을 알 수 있습니다.
+
+- x plus y times 3 plus 66. If we did that wrong, we might have, for example, parentheses like this. We might have a plus that was getting multiplied rather than an addition of a sum. But we don't. We have the multiplication inside and then the as. OK, cool.
+  - x 더하기 y 곱하기 3 더하기 66을 잘못 해석했으면, 예를 들어, 이렇게 괄호를 사용했을 수 있습니다. 플러스가 곱해지기보다는 합의 덧셈이 되어야 합니다. 하지만 우리는 곱셈이 내부에 있고, 그 다음에 더하기가 있습니다. 아주 좋습니다.
+
+- That's all just parsing, and it's not a particularly smart parser. Oh, I already showed you this. But you have to declare the language. Okay, this is boring.
+ChatGPT
+  - 이것은 단지 파싱일 뿐이고, 특별히 똑똑한 파서는 아닙니다. 아, 이건 이미 보여드렸네요. 언어를 선언해야 합니다. 이 부분은 지루하죠.
+
+- Well, one thing I'll note is you tell it what you want it to have as keywords. But let's do—okay, boring, boring. Let's talk about type checking.
+ChatGPT
+  - 네, 여기서 짚고 넘어갈 부분은 무엇을 키워드로 사용할지 지정해야 한다는 것입니다. 자, 이제 지루한 부분은 넘기고 타입 체크에 대해 이야기해 봅시다.
+
+- This is where it gets a little more interesting. So, so far, we allowed you to define data structures and specify their grammar. And you kind of get for free a parser that will parse and give you what's called an abstract syntax tree, which is just an instance of those data structures and a way to view your program as a data structure and not as a string. But now we want to do type checking. And the type checking rules for this EG language are pretty simple.
+ChatGPT
+  - 여기서부터 더 흥미로워집니다. 지금까지는 데이터 구조를 정의하고 그들의 문법을 지정하는 방법을 다루었고, 이를 통해 추상 구문 트리(AST)를 자동으로 생성하는 파서를 얻을 수 있었습니다. 추상 구문 트리는 프로그램을 문자열이 아닌 데이터 구조로 볼 수 있게 해줍니다. 이제 타입 체크를 해보겠습니다. 이 EG 언어의 타입 체크 규칙은 매우 간단합니다.
+
+- If you're adding things, they basically have to have the same type. So I can add two integers, I can add two tuples that are both two integers, but I can't add a tuple and an integer or two tuples of different arities. That should not work.
+ChatGPT
+  - 맞습니다. 더하기 연산을 수행할 때 두 피연산자는 같은 타입이어야 합니다. 즉, 두 정수를 더하거나 두 개의 정수로 구성된 두 튜플을 더할 수는 있지만, 튜플과 정수를 더하거나 서로 다른 크기의 튜플을 더할 수는 없습니다. 그런 경우는 작동하지 않아야 합니다.
+
+- So that gives us a question, though. What are types in this language, right? The next thing we have to define—we defined what the program language is, but we didn't define the grammar of types. So the next thing you have to do is define that. We're going to have it basically be—I'm starting with the simple. I'm excluding generics for the moment. It's an integer, or it's a tuple of some set of other types.
+ChatGPT
+  - 그래서 여기서 중요한 질문이 생깁니다. 이 언어에서 타입이란 무엇일까요? 우리가 프로그램 언어의 정의는 했지만, 타입의 문법은 정의하지 않았습니다. 그래서 다음으로 해야 할 일은 그것을 정의하는 것입니다. 우리는 기본적으로 간단한 것부터 시작할 겁니다. 일단 제네릭은 제외하고, 정수 타입이거나 다른 타입들의 튜플이 되는 것으로 할 것입니다.
+
+
+- Right, so that's just an enum with two variants. One is an integer, one is a tuple. Okay.
+ChatGPT
+  - 맞아요, 그래서 그건 두 가지 변형을 가진 열거형(enum)입니다. 하나는 정수고, 다른 하나는 튜플입니다. 알겠죠?
+
+- Infants rule stuff.
+ChatGPT
+  - 그렇지 않아요. 죄송합니다만, 이해하지 못했어요. 좀 더 설명해주시겠어요?
+
+
+- How many of you have seen something like this? OK, how many of you understood what the hell is what is going on here? Yeah, me either. OK, so this notation is actually ridiculously simple. It's like the world's... How many of you have written in TCL? OK, more than I thought. I have not written in TCL, but what I do know about TCL is that everything is a string. Well, this is kind of true here also. The way programming languages work basically, or these rules work, it's like you took the world's simplest interpreter and you run it, and it has to be simple because we have to be able to map it to mathematics. So it has to be very, very simple so that that mapping is very, very simple so that we can formally prove things about it.
+ChatGPT
+- 이해되었어요. 이것이 간단한 해석기처럼 보여요. 그리고 당신이 언급한 것처럼, 모든 것이 문자열처럼 다루어져요. 이것이 수학적으로 간단하게 매핑되어야 하기 때문에 이것이 간단해야 한다고 이해했어요.
+
+- I'm going to walk through it. The very first confusing thing about inference rules, in my opinion, is their name, which is like, what is that? What is inference? I don't know. I think of type inference. It's not really about that. It's about this English word infer. It's basically a rule that says, if I infer something, it means I figured it out based on something else. Well, an inference rule is basically, how can we figure out a conclusion based on a set of premises? If these things are true, in other words, you can read them as if you see a big rule that has a big line,
+ChatGPT
+  - 인퍼런스 규칙은 전제 조합에 기반하여 결론을 추론하는 것을 나타내는 것이죠. 만약 이러한 사실들이 참이라면, 이것들은 어떻게 이해되어야 할까요? 큰 선이 있는 큰 규칙을 보게 되면,
+
+- stuff on top of the line, that's the conditions. If x and y, then z, right? This is the conclusion. And then there's this thing over on the side, that's just the name, just so you can give it, refer to it. So like here, these are the two conditions on top, and that's the conclusion. Okay. Sometimes there's no conditions, and then we just write a line.
+ChatGPT
+  - 선 위에 있는 것들, 그것이 조건들이에요. 만약 x와 y라면, z가 되겠죠? 이것이 결론입니다. 그리고 옆에 있는 것은 그냥 이름일 뿐이에요. 그래서 이 규칙을 참고하기 위해 이름을 붙입니다. 이러한 것들은 위에 있는 두 가지 조건이고, 그것이 결론입니다. 때로는 조건이 없을 수도 있습니다. 그럴 때에는 단순히 선만 그립니다.
+
+- It's a pretty handy notation, even though it's so simple. So here's an example of one of the inference rules you might write in EG, which is somewhat simpler.
+ChatGPT
+  - 네, 이러한 간단한 표기법이지만 상당히 편리합니다. 그래서 EG에서 작성할 수 있는 추론 규칙의 예시 하나를 보여드릴게요.
+
+
+- What is going on here? So we've got this kind of, even in this very simple example, we've kind of got this Bayesian notation. What's happening there, when you see a string like this, this is also a term. Basically, it has two different parts to it, right? Overall, this is basically a predicate. It's something that we can say is true or not true, or at least true or not known to be true.
+ChatGPT
+  - 여기에서 어떤 일이 벌어지고 있는 걸까요? 이 매우 간단한 예제에서도 베이지안 표기법이 사용되었습니다. 문자열을 보면, 이것 또한 용어입니다. 기본적으로 이것은 두 가지 다른 부분을 갖고 있습니다. 전반적으로 이것은 기본적으로 술부입니다. 우리는 이것이 참인지, 거짓인지, 또는 적어도 참이 아닌지를 말할 수 있는 것입니다.
+
+
+- variables. So here, the T, that's a variable saying some type. I'm going to call it T.
+ChatGPT
+  - 변수입니다. 여기서 T는 어떤 유형을 나타내는 변수입니다. 나는 그것을 T라고 부를 것입니다.
+
+- And actually, you could call them meta variables very properly. Just call them variables. Basically, when you have these letters, usually that's kind of the variable. So, T is some type. Maybe it's U32, maybe it's parenthesis U32, U32.
+ChatGPT
+  - 네, 그것은 메타 변수라고도 할 수 있습니다. 단지 변수라고 하면 됩니다. 일반적으로 이런 문자는 변수를 나타냅니다. 그래서 T는 어떤 유형을 나타냅니다. U32일 수도 있고, (U32, U32)일 수도 있습니다.
+
+- Gamma, by convention, I put it in here because I'm Greek, but I personally prefer to use the letter E because I actually speak English as the primary language, but gamma is usually used to mean the typing environment. It's basically the types of all the variables that have been declared, though it could have other stuff in Rust. It might have lifetime relationships and so forth.
+ChatGPT
+  - Gamma는 일반적으로 타이핑 환경을 의미합니다. 이는 지금까지 선언된 모든 변수의 타입을 나타내지만, Rust의 경우 수명 관련 정보 등 다른 정보도 포함될 수 있습니다.
+
+- Variable names and types for those variables.
+ChatGPT
+  - Gamma는 변수 이름과 해당 변수의 타입을 나타냅니다.
+
+
+- can actually define gamma, like everything else when we're doing an informality, we have to kind of define this stuff with Rust data structures. So here I'm not using the term macro just because I never need to parse it, but the so-called environment is basically just a list of variables that are in scope and their type. And I'm just using a map, you know, it's a B-tree map, actually, where it goes from one to the other. I'm also carrying the program along with me. That's so I can look up function definitions when you call them. We won't use that right now. But so that's what we're going to call when you see gamma, we're going to basically just think it means some environment, right?
+ChatGPT
+  - Gamma는 변수 이름과 해당 변수의 타입을 나타냅니다. 이를 표현하기 위해 Rust 데이터 구조를 사용합니다. 환경(Environment)은 현재 범위 내에 있는 변수와 그 타입의 리스트입니다. 저는 여기서 파싱할 필요가 없기 때문에 term 매크로를 사용하지 않았습니다. 환경은 변수와 그 타입 사이의 매핑을 나타내는 B-트리 맵으로 구성됩니다. 또한 프로그램을 함께 전달합니다. 이렇게 함으로써 함수 정의를 호출할 때 해당 함수를 찾을 수 있습니다.
+
+
+- OK, and this notation we saw, gamma, parentheses, x. Well, you could think of gamma like a function you can call to get the type of a variable. So we'll do that by accessing the.
+ChatGPT
+  - gamma(x)와 같은 표기법을 보면 gamma를 변수의 타입을 얻기 위한 함수처럼 생각할 수 있습니다. 이를 위해 저는 gamma에 접근하여 함수를 호출합니다.
+
+- Clear stuff. We saw these variables. What about this weird thing? That's called a turnstile. Why? Because, you know, when you walk in the subway, the little thing turns. But that's why. That's a turnstile, the thing that turns. And this colon. The answer is this is just stuff. It doesn't have any meaning. It's like opaque strings, like the name of a function. Effectively, the name of this predicate, if you want to, is like gamma colon. So it's kind of like Objective-C, if you did that, or Swift. I don't know how Swift works exactly. But in Objective-C, the name of a method is kind of strung out across, interspersed. So the name of this method, insert object, it's actually insert object at index, like one big string, even though you write it in parts. So here you could say the name of this rule is gamma colon, which is kind of hard to say out loud.
+ChatGPT
+  - 또 이상한 것이 있습니다. 바로 'turnstile'입니다. 이는 지하철에서 걸어가는 작은 것처럼 돌아가는 기계를 의미합니다. 그리고 이 콜론입니다. 이것은 그냥 정보일 뿐입니다. 의미가 없습니다. 그것은 마치 함수의 이름처럼 작동합니다.
+  
+- Sounds awkward. So maybe we can give it a better name. We'll see. We will in a second.
+ChatGPT
+  - 맞습니다. 다소 어색하죠. 아마 좀 더 나은 이름을 지어주는 게 좋을 것 같습니다. 곧 알아보겠습니다.
+
+
+- conventions. I said they're just random stuff. That's how I think of it. You just have to accept it. It's just this is what they chose to use. But there are some common conventions people often use. The turnstile separates assumptions, your environment, the things that you got from the outside from the thing you're trying to prove with those assumptions. If I know that the variable x is a U32, then I know that a reference to x has type U32. That's based on this assumption.
+ChatGPT
+  - 맞아요. 표준은 그냥 랜덤한 것처럼 보이지만, 실제로는 일반적으로 사용되는 몇 가지 규칙이 있어요. 회전문은 가정과 함께 얻은 환경을 외부에서부터 얻은 것으로부터 증명하려는 것을 분리해줍니다. 만약 변수 x가 U32라는 것을 알고 있다면, x에 대한 참조는 U32 유형을 가진다는 것을 알 수 있습니다. 이것은 이 가정에 기반합니다.
+
+- colon usually means hasType.
+ChatGPT
+  - 맞아요. 대부분의 경우 콜론은 "유형을 가지고 있다"는 의미로 해석됩니다.
+
+
+- read this as assuming gamma, then E has the type T. And what I would say is this was actually like a turning point for me, personally, when I realized that this weird symbol basically meant assuming or lets me say. That's how I thought of it at first, I remember. Let us say, like this lets us say that. I was like, oh, I can read this now. It reads like English instead of this weird string of symbols. So just knowing what people mean by it is usually very impactful, I would say.
+ChatGPT
+  - 그렇죠. 이해할 때 가끔 추상적인 기호들이 혼란스럽게 느껴질 수 있지만, 그것들이 일종의 "언어"로서 사용된다고 생각하면 도움이 될 수 있습니다. 이해할 때 흔히 사용되는 의미와 함께 연관 짓는 것이 도움이 됩니다.
+
+- But how will we write that in formality? We're just going to write it like a Rust function, so we have to give it a name.
+ChatGPT
+  - 그럼 "type_of_variable"과 같은 이름을 사용할 수 있겠죠? 그러면 예를 들어, gamma: x가 함수 "type_of_variable"의 인자로 전달되고, x의 타입이 반환됩니다.
+
+
+- because it computes the type for an expression, like the type of an expression.
+ChatGPT
+  - 그렇습니다. 그러면 "expression_type"이라는 이름을 사용할 수 있습니다. 이것은 함수 이름으로써 "gamma: E"가 인자로 전달되고, "E"의 타입이 반환됩니다.
+
+- But you'll notice that some of them, the first two, show up as parameters to this function, and the last one, the type that comes after the colon, that's actually the return value.
+ChatGPT
+  - 맞아요. "gamma"와 "E"는 함수의 매개변수로 전달되고, ":" 뒤에 오는 "T"는 반환 값입니다.
+
+- less abstract. Normally, when you define the rules, there's not really a notion of input and output. It's just like a relationship between these things. If you have this variable, it has that type, and you can kind of run it in both ways. But when we're really going to execute it in real life, we have to think about what's the input and what gets computed from the input. Otherwise, it's not like a function, an executable function.
+ChatGPT
+  - 맞아요. 일반적으로 규칙을 정의할 때 입력과 출력에 대한 개념은 별도로 없어요. 단순히 이러한 관계가 있을 뿐이에요. 만약에 이 변수가 있다면 그 타입이 이것이다, 그리고 이를 양쪽으로 실행할 수 있어요. 하지만 실제로 실행할 때에는 입력이 무엇이고 입력으로부터 어떤 것이 계산되는지를 생각해야 해요. 그렇지 않으면 함수처럼 실행되지 않아요.
+
+- Usually, so I just kind of baked that in, right? And so what this is saying is, given an environment and an expression, we should be able to figure out what the type of that expression is. That's actually a property, right? We're not going to, like, guess it. We're going to have to, it has to be something deterministic.
+ChatGPT
+  - 맞아요. 그래서 그것을 그냥 포함시켰어요. 이 말은 환경과 표현식이 주어졌을 때 그 표현식의 타입을 알아낼 수 있어야 한다는 것이에요. 이것은 실제로 속성이에요. 우리는 그것을 추측하지 않을 거에요. 그것은 결정적인 것이어야 해요.
+
+- But OK, so here's how we're actually going to write it. We're going to write judgment function. And what this is is it's a crazy, wicked macro that I'm going to show you later. And then we're going to start with what looks like a fairly normal Rust function, except for this part here, where I have two arrows instead of one arrow. And that's because what we're going to do when you write this typing, it's possible that actually we're going to write a series of rules that we can use, like the rule we saw. And it's possible that more than one of them applies, right? It's also possible that zero apply. So in some sense, we're computing all the possible types for this expression. And if there are no possible types, then it's not a well-typed expression. It's invalid. But if there's more than one, no, that might be OK. Sometimes there's many ways to draw a conclusion. Any one of them is valid, sort of like A or B, right? It's true if A is true, it's true if B is true, and it's true if they're both true.
+ChatGPT
+  - 그렇죠. 그래서 실제로 우리가 작성할 건 판단 함수입니다. 이것은 제가 나중에 보여드릴 엄청난 매크로입니다. 그런 다음에는 보통 러스트 함수와 비슷한 것을 시작할 거에요. 단, 이 부분에서 하나의 화살표 대신 두 개의 화살표가 있는 이유는 무엇일까요? 이 타이핑을 작성할 때 실제로 우리가 사용할 수 있는 여러 규칙을 작성할 수 있기 때문입니다. 우리는 복수의 규칙이 적용될 수 있다는 것을 알고 있어요, 맞죠? 실제로 적용될 수도 있고, 적용되는 것이 없을 수도 있어요. 어떤 의미에서는 이 표현식에 대한 모든 가능한 유형을 계산하고 있는 거죠. 가능한 유형이 없으면, 이것은 유효한 표현식이 아닙니다. 그러나 여러 개가 있다면, 이것은 괜찮을 수도 있어요. 때로는 결론을 내리는 여러 가지 방법이 있습니다. 그중 아무것이나 유효합니다. A 또는 B처럼요. A가 참이면 참이고, B가 참이면 참이며, 둘 다 참이면 참이기 때문입니다.
+
+
+- And this is how the rules are going to look. So this is the equivalent. This is the math up here.
+ChatGPT
+- 그럼요. 계속하셔도 좋습니다. 질문이나 의견이 있으면 언제든지 말씀해주세요.
+
+- Okay, got me nervous.
+ChatGPT
+- 이해합니다. 코딩 동영상을 보면서 조금 긴장되기도 하죠. 하지만 여기서 중요한 건 당신의 논리를 이해하고 있으니 걱정하지 않아도 된다는 점입니다. 함께 살펴보겠습니다. 계속 진행할까요?
+
+- Probably there is. Anyway, this is how the rules are going to look. There's going to be parentheses, and then this line, and then the conclusion down here, and the premises above. So we're saying…
+ChatGPT
+  - 이해했습니다. 이것이 규칙들이 어떻게 보일 것인지에 대한 설명이군요. 규칙을 파악하는 데 도움이 될 것 같습니다. 계속 진행해 볼까요?
+
+- expression, and the environment, let's call it ends. This is just Rust pattern matching, so end. And the expression is a variable.
+ChatGPT
+  - 그렇군요. 그리고 식이 변수인 경우를 처리하는 것 같습니다. 이제 다른 경우도 살펴보겠습니다.
+
+- Then I can compute the type by running these steps on top. I'm going to ask the environment to look up the variable x. You see that I put the question mark? That's because, actually, the way it's defined can return
+
+   - 23분 58초
