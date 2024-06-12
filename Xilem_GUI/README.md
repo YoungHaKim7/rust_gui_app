@@ -26,6 +26,9 @@
 
 # GPU는 어떻게 작동할까 | bRd 3D
 - https://youtu.be/ZdITviTD3VM?si=Vr5NAYIbEncS0FtA
+  - Polygon mesh
+    - https://en.wikipedia.org/wiki/Polygon_mesh
+
 
 <hr>
 
