@@ -32,6 +32,7 @@
 - https://youtu.be/ZdITviTD3VM?si=Vr5NAYIbEncS0FtA
 
 - 필수 단어(3D를 이해하기 위한 상식)
+  - vertex -> 복수형 vertices
   - Polygon mesh
     - https://en.wikipedia.org/wiki/Polygon_mesh
   - Vertex Format(정점 형식)
