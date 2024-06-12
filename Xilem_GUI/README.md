@@ -35,6 +35,9 @@
   - 정점 버퍼(Vertex Buffer)
     - https://vitacpp.tistory.com/71
 
+# '컴퓨터'의 구조는 어떻게 되어있을까? CPU와 메모리! [안될과학 - 랩미팅 15화] | 안될과학 Unrealscience
+- https://youtu.be/SiC74U8aJbM?si=t32SXPlahWLzeGLb
+
 
 <hr>
 
