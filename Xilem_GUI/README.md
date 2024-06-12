@@ -8,7 +8,7 @@
 - [240605type-theory-for-busy-engineers---niko-matsakis--rust-nederland-rustnl](#type-theory-for-busy-engineers---niko-matsakis--rust-nederland-rustnl)
 
 - 컴퓨터 상식
-  - [gpu는-어떻게-작동할까--brd-3d](#gpu는-어떻게-작동할까--brd-3d)
+  - [gpu는-어떻게-작동할까--brd-3d & CPU는 어떻게 작동할까? | bRd 3D](#gpu는-어떻게-작동할까--brd-3d)
   - [컴퓨터의-구조는-어떻게-되어있을까-cpu와-메모리-안될과학---랩미팅-15화--안될과학-unrealscience](#컴퓨터의-구조는-어떻게-되어있을까-cpu와-메모리-안될과학---랩미팅-15화--안될과학-unrealscience)
 
 <hr>
@@ -43,6 +43,9 @@
 
 # '컴퓨터'의 구조는 어떻게 되어있을까? CPU와 메모리! [안될과학 - 랩미팅 15화] | 안될과학 Unrealscience
 - https://youtu.be/SiC74U8aJbM?si=t32SXPlahWLzeGLb
+
+# CPU는 어떻게 작동할까? | bRd 3D
+- https://youtu.be/Fg00LN30Ezg?si=6rixw2fhGOljPI9r
 
 
 <hr>
