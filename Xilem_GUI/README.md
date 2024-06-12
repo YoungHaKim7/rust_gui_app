@@ -24,6 +24,11 @@
 
 <hr>
 
+# GPU는 어떻게 작동할까 | bRd 3D
+- https://youtu.be/ZdITviTD3VM?si=Vr5NAYIbEncS0FtA
+
+<hr>
+
 # (240605)Xilem: Let's Build High Performance Rust UI - Raph Levien | Rust Nederland (RustNL)[[🔝]](#link)
 - https://youtu.be/OvfNipIcRiQ?si=vn6pX8pVNB1dqSYq
   - 강의내용 github https://github.com/rustnl/meetups/tree/main/20240507-delft/slides
