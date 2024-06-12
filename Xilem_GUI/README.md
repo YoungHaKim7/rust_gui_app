@@ -315,4 +315,38 @@ ChatGPT
 ChatGPT
   - 그래요, 그래서 우리는 프로그램이 무엇인지를 정의하는 이런 구조를 가질 수 있습니다. 그리고 그것은 필드를 가지고 있으며, term이라는 주석을 달 수 있습니다. 그리고 그것은 PL 프로그래밍 언어 용어의 한 부분입니다. term은 기본적으로 프로그램의 부분이거나 값이거나, 우리가 이야기할 것 중 하나입니다. 우리는 무엇인가를 가리키는 단어가 필요하기 때문에 term이 그것입니다. 그리고 여기에는 문법을 넣습니다.
 
+- You put the grip.
+ChatGPT
+  - 문법을 넣으세요.
+
+- That will tell you, oh, I'm going to parse the value of this field here in the input. And if you have a little star that says, take zero or more things, collect them, and put them in a vector. So this would be zero or more function definitions. Of course, it's using traits and everything under the hood to drive the execution. And this would just parse a single expression.
+ChatGPT
+  - 별표는 입력에서 이 필드의 값을 구문 분석하라는 의미입니다. 별표는 해당 항목을 0개 이상 모아 벡터에 넣으라는 뜻입니다. 그래서 이 경우, 0개 이상의 함수 정의를 구문 분석하게 됩니다. 물론, 이 모든 과정은 내부적으로 트레이트와 기타 요소를 사용하여 실행을 구동합니다. 그리고 이것은 단일 표현식을 구문 분석하게 됩니다.
+
+- grammar. Sometimes you have grammars that are a little more complicated, like the expression could be an integer, or it could be an identifier indicating a variable, or a bunch of expressions in a tuple. So when you have a choice of many different options, we'll model that with an enum.
+ChatGPT
+  - 문법이 좀 더 복잡해질 때가 있는데, 예를 들어 표현식이 정수일 수도 있고, 변수임을 나타내는 식별자일 수도 있으며, 또는 튜플 안에 여러 표현식이 있을 수도 있습니다. 여러 가지 선택지가 있을 때는 이를 열거형(enum)으로 모델링합니다.
+
+- Okay.
+ChatGPT
+  - 그래서 이렇게 여러 선택지를 가진 문법을 다룰 때, 열거형을 사용하여 각각의 경우를 명시하고 처리할 수 있습니다. 이렇게 하면 프로그램의 구조와 의미를 더 명확하게 정의할 수 있습니다. 이 방식은 복잡한 프로그래밍 언어의 구문을 다루는 데 매우 유용합니다.
+
+- And then for each of the variants, we're going to give the grammar. So these are the different choices. If it's an integer, it should just look like.
+ChatGPT
+  - 정수인 경우에는 그냥 숫자로 보이겠죠. 그래서 각 변형마다 해당 문법을 지정하게 됩니다. 예를 들어, 정수는 숫자처럼 보이도록 하고, 식별자는 변수 이름으로 인식되도록 하는 식입니다. 이런 식으로 다양한 선택지를 정의할 수 있습니다.
+
+- It's an anonymous field. I just call it v0, v1, and so on. So here, one little handy macro is this id macro. That just declares a string, an identifier. So we're saying, okay, there's going to be an identifier types that I call id, and I'm going to parse. If I see an identifier, that's a var.
+ChatGPT
+  - 그래서 익명 필드는 그냥 v0, v1 이렇게 부르는 거죠. 여기서 유용한 매크로 중 하나가 id 매크로입니다. 이 매크로는 문자열, 즉 식별자를 선언합니다. 그래서 식별자 유형을 id라고 부르고, 식별자가 보이면 var로 파싱하겠다는 뜻입니다.
+
+- See a little bit of handy notation. You can say $ with parentheses. That means a parenthesized list. So I've tried to put in the common conventions you'll often find. And so we're going to parse one or more expressions and build a tuple.
+ChatGPT
+
+  - 이 유용한 표기법을 보면, 달러 기호에 괄호를 붙이면 괄호로 묶인 목록을 의미합니다. 그래서 자주 사용하는 일반적인 관습을 포함시키려고 노력했습니다. 이제 하나 이상의 표현식을 파싱해서 튜플을 만들겠습니다.
+
+
+- And we'll continue. Maybe we want to have plus, minus, times, and stars.
+ChatGPT
+  - 계속해서 플러스, 마이너스, 곱셈, 그리고 별표 연산자도 추가해 보겠습니다.
+
    - 8분 10초
