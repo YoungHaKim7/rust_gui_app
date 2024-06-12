@@ -1,6 +1,7 @@
 # link
 
 - [240605강의내용github](https://github.com/rustnl/meetups/tree/main/20240507-delft/slides)
+  - https://docs.google.com/presentation/d/1355q8bpSUUCLDNy-YJ1QbaeBBG3px7Bv6YirkLXHIFw/edit#slide=id.p
 
 - [240605xilem-lets-build-high-performance-rust-ui---raph-levien--rust-nederland-rustnl](#240605xilem-lets-build-high-performance-rust-ui---raph-levien--rust-nederland-rustnl)
 
