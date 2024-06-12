@@ -6,6 +6,9 @@
 
 - [240605type-theory-for-busy-engineers---niko-matsakis--rust-nederland-rustnl](#type-theory-for-busy-engineers---niko-matsakis--rust-nederland-rustnl)
 
+- 컴퓨터 상식
+  - [gpu는-어떻게-작동할까--brd-3d](#gpu는-어떻게-작동할까--brd-3d)
+
 <hr>
 
 # Xilem
