@@ -26,8 +26,14 @@
 
 # GPU는 어떻게 작동할까 | bRd 3D
 - https://youtu.be/ZdITviTD3VM?si=Vr5NAYIbEncS0FtA
+
+- 필수 단어(3D를 이해하기 위한 상식)
   - Polygon mesh
     - https://en.wikipedia.org/wiki/Polygon_mesh
+  - Vertex Format(정점 형식)
+    - https://paroj.github.io/gltut/Optimize%20Vertex%20Format.html
+  - 정점 버퍼(Vertex Buffer)
+    - https://vitacpp.tistory.com/71
 
 
 <hr>
