@@ -16,3 +16,9 @@
 
 - gtk4-rs example
   - https://github.com/gtk-rs/gtk4-rs/tree/master/examples
+
+<hr>
+
+# GTK와 러스트를 통합하는 발표자료
+- Oxidizing GTK | Igalia
+  - https://youtu.be/_hBwEkxlBSI?si=dKA9brAL45zSAD5i
