@@ -20,5 +20,5 @@
 <hr>
 
 # GTK와 러스트를 통합하는 발표자료
-- Oxidizing GTK | Igalia
+- (240515)Oxidizing GTK | Igalia
   - https://youtu.be/_hBwEkxlBSI?si=dKA9brAL45zSAD5i
