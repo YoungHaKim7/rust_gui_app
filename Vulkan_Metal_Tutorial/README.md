@@ -58,3 +58,6 @@ Comparison to other well-known Graphics APIs in Rust ecosystem.
 <hr>
 
 # DirectX(WindowsOS)
+
+- DirectX3D 51강~55강
+  - https://m.blog.naver.com/gp89ky/223027167276
