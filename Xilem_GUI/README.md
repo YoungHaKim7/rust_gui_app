@@ -13,6 +13,11 @@
 
 <hr>
 
+# 여기에 정리중.
+- https://github.com/YoungHaKim7/rust_GUI_Xilem_Training
+
+<hr>
+
 # Xilem
 - An experimental Rust native UI framework
 - https://github.com/linebender/xilem
