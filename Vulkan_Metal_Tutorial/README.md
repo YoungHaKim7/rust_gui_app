@@ -26,6 +26,11 @@
   - Vulkan vs directX 차이점 이해
     - https://techscene.tistory.com/entry/게이머-필독-Vulkan과-DirectX-비교-분석-발더스-게이트-3
 
+# Learning Vulkan with Rust | Tsoding Daily
+- https://youtu.be/8iEN64bj3X4?si=45lau6cdCsHBQvkl
+
+<hr>
+
 # NVIDIA
 
 - https://www.nvidia.com/en-us/drivers/unix/
