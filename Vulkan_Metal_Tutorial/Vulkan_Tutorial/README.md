@@ -1,3 +1,8 @@
+# Learning Vulkan with Rust | Tsoding Daily
+- https://youtu.be/8iEN64bj3X4?si=45lau6cdCsHBQvkl
+
+<hr>
+
 # Vulkan being used in a real engine in the open-source Quake and DOOM 3
 
 - Real engine(Quake and DOOM 3)
