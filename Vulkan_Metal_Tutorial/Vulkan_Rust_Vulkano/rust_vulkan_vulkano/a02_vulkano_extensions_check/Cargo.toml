@@ -1,0 +1,7 @@
+[package]
+name = "a02_vulkano_extensions_check"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+vulkano = "0.34.1"
