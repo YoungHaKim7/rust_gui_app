@@ -23,3 +23,16 @@
 
 -  Lightning talk - Why maintaining winit is hard - Holden Marcsisin | Rust Belt Rust Conference
   - https://youtu.be/IiOffohZB3M?si=TZ1hR6nSx-VnyiqY
+
+<hr>
+
+# Windows API문서
+- https://github.com/MicrosoftDocs/win32
+
+# windows.h
+- https://github.com/wine-mirror/wine
+  - 원본(wine, Linux에서 Windows프로그램 돌리기)
+    - https://gitlab.winehq.org/wine/wine
+   
+<hr>
+
