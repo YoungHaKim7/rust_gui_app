@@ -1,3 +1,8 @@
+# 여기에 정리중...
+- https://github.com/YoungHaKim7/rust_iced_exercise
+
+<hr />
+
 # iced GUI
 - iced[![crates.io](https://img.shields.io/crates/v/iced.svg)](https://crates.io/crates/iced)
 ![Crates.io](https://img.shields.io/crates/l/iced)
