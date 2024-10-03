@@ -44,7 +44,8 @@ https://google.github.io/comprehensive-rust/exercises/day-3/solutions-morning.ht
     - https://github.com/YoungHaKim7/druid-example
 
 # Xilem(Druid계보를 이어 받음 역시)
-- xilem<a href="https://github.com/linebender/xilem"><img alt="githubicon" width="20px" src="https://user-images.githubusercontent.com/67513038/218287708-001511d7-1cce-42d3-92d2-4a61193b38f0.png" /></a>
+- xilem[![crates.io](https://img.shields.io/crates/v/xilem.svg)](https://crates.io/crates/xilem)![Crates.io](https://img.shields.io/crates/l/xilem)
+![wgpuDownloads](https://img.shields.io/crates/d/xilem.svg)<a href="https://github.com/linebender/xilem"><img alt="githubicon" width="20px" src="https://user-images.githubusercontent.com/67513038/218287708-001511d7-1cce-42d3-92d2-4a61193b38f0.png" /></a>
 ![druidstar](https://img.shields.io/github/stars/linebender/xilem.svg)
 
     - An experimental Rust native UI framework
