@@ -69,7 +69,7 @@ https://google.github.io/comprehensive-rust/exercises/day-3/solutions-morning.ht
 <hr>
 
 - floem[![crates.io](https://img.shields.io/crates/v/floem.svg)](https://crates.io/crates/floem)
-![Crates.io](https://img.shields.io/crates/l/floem)![icedDownloads](https://img.shields.io/crates/d/floem.svg)<a href="https://github.com/iced-rs/iced"><img alt="githubicon" width="20px" src="https://user-images.githubusercontent.com/67513038/218287708-001511d7-1cce-42d3-92d2-4a61193b38f0.png" /></a>![icedstar](https://img.shields.io/github/stars/lapce/floem.svg)
+![Crates.io](https://img.shields.io/crates/l/floem)![floemDownloads](https://img.shields.io/crates/d/floem.svg)<a href="https://github.com/lapce/floem"><img alt="githubicon" width="20px" src="https://user-images.githubusercontent.com/67513038/218287708-001511d7-1cce-42d3-92d2-4a61193b38f0.png" /></a>![floemstar](https://img.shields.io/github/stars/lapce/floem.svg)
 
     - (Floem) A native Rust UI library with fine-grained reactivity
 
