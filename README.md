@@ -68,13 +68,16 @@ https://google.github.io/comprehensive-rust/exercises/day-3/solutions-morning.ht
 
 <hr>
 
-- (egui)[![crates.io](https://img.shields.io/crates/v/egui.svg)](https://crates.io/crates/egui)![Crates.io](https://img.shields.io/crates/l/egui)
-![wgpuDownloads](https://img.shields.io/crates/d/egui.svg)<a href="https://github.com/emilk/egui"><img alt="githubicon" width="20px" src="https://user-images.githubusercontent.com/67513038/218287708-001511d7-1cce-42d3-92d2-4a61193b38f0.png" /></a>
-![eguiustar](https://img.shields.io/github/stars/emilk/egui.svg)
+- floem[![crates.io](https://img.shields.io/crates/v/floem.svg)](https://crates.io/crates/floem)
+![Crates.io](https://img.shields.io/crates/l/floem)
+![icedDownloads](https://img.shields.io/crates/d/floem.svg)<a href="https://github.com/iced-rs/iced"><img alt="githubicon" width="20px" src="https://user-images.githubusercontent.com/67513038/218287708-001511d7-1cce-42d3-92d2-4a61193b38f0.png" /></a>
+![icedstar](https://img.shields.io/github/stars/lapce/floem/iced.svg)
 
-    - egui: an easy-to-use immediate mode GUI in Rust that runs on both web and native
+    - (Floem) A native Rust UI library with fine-grained reactivity
 
-    - https://github.com/emilk/egui
+    - https://github.com/lapce/floem
+      - crates.io
+        - https://crates.io/crates/floem
 
 - iced[![crates.io](https://img.shields.io/crates/v/iced.svg)](https://crates.io/crates/iced)
 ![Crates.io](https://img.shields.io/crates/l/iced)
@@ -106,6 +109,17 @@ https://google.github.io/comprehensive-rust/exercises/day-3/solutions-morning.ht
     - https://crates.io/crates/relm4
 
 <hr>
+
+# 최적화 문제로 경계해서 봐야할 프로젝트
+- (egui)[![crates.io](https://img.shields.io/crates/v/egui.svg)](https://crates.io/crates/egui)![Crates.io](https://img.shields.io/crates/l/egui)
+![wgpuDownloads](https://img.shields.io/crates/d/egui.svg)<a href="https://github.com/emilk/egui"><img alt="githubicon" width="20px" src="https://user-images.githubusercontent.com/67513038/218287708-001511d7-1cce-42d3-92d2-4a61193b38f0.png" /></a>
+![eguiustar](https://img.shields.io/github/stars/emilk/egui.svg)
+
+    - egui: an easy-to-use immediate mode GUI in Rust that runs on both web and native
+
+    - https://github.com/emilk/egui
+
+<hr />
 
 # Window handling library in pure Rust
 - winit_GUI[![crates.io](https://img.shields.io/crates/v/winit.svg)](https://crates.io/crates/winit)![Crates.io](https://img.shields.io/crates/l/winit)![winitDownloads](https://img.shields.io/crates/d/winit.svg)<a href="https://github.com/rust-windowing/winit"><img alt="githubicon" width="20px" src="https://user-images.githubusercontent.com/67513038/218287708-001511d7-1cce-42d3-92d2-4a61193b38f0.png" /></a>
