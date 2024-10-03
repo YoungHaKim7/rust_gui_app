@@ -18,5 +18,3 @@
 
 - Modern Graphical User Interface in Rust - Iced Tutorial | Line Indent
   - https://youtu.be/72PyU1EIGY8?si=6vg4RVvwKm8M7GVF
-
-- test
