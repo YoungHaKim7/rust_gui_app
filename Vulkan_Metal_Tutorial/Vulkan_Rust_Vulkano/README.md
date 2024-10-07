@@ -1,5 +1,5 @@
-# 여기에 정리중..
-- https://github.com/YoungHaKim7/vukan-tutorial-rust_cpp
+# 여기에 정리중..(Rust + C++)
+- https://github.com/YoungHaKim7/vulkan-tutorial-rust_cpp
 
 <hr />
 
