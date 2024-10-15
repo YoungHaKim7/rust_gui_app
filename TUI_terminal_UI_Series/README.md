@@ -27,9 +27,6 @@
 - A TUI (Text User Interface) library focused on ease-of-use.
   - https://crates.io/crates/cursive
   - https://github.com/gyscos/cursive
-  
-
-# Rust TUI / Cursive Crash Course + Project: Pomodoro Timer Application | Bek Brace
-- https://youtu.be/Zv51cFIM75U?si=Ar_5CDg9usFrJ_x2
-  - This i a 2 parts repo, the first part is a quick crash course on Cursive TUI library; and the second part is a Pomodoro TUI Application written in Rust with Cursive library using ARC and MUTEX types.
+    - [(cursive Tutorial유튜브)Rust TUI / Cursive Crash Course + Project: Pomodoro Timer Application | Bek Brace](https://youtu.be/Zv51cFIM75U?si=Ar_5CDg9usFrJ_x2)
+      - This i a 2 parts repo, the first part is a quick crash course on Cursive TUI library; and the second part is a Pomodoro TUI Application written in Rust with Cursive library using ARC and MUTEX types.
     -  https://youtu.be/Zv51cFIM75U?si=uBbcoLWeYGzF7ELB
