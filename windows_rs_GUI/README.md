@@ -9,6 +9,9 @@
 
 - https://github.com/microsoft/windows-rs
 
+- tutorial eBook
+  - https://kennykerr.ca/rust-getting-started/
+
 <hr>
 
 # windows-rs
