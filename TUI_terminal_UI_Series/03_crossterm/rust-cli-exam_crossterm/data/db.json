@@ -1,0 +1,9 @@
+[
+    {
+        "id": 1,
+        "name": "Chip",
+        "category": "cats",
+        "age": 4,
+        "created_at": "2020-09-01T12:00:00Z"
+    }
+]
